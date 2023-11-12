@@ -13,7 +13,7 @@ h1,h2,h3,p{
  @import url('https://fonts.googleapis.com/css?family=Source+Code+Pro:200');
  
  body  {
-     background-image: url(./assets/images/websiteBackgroundBymiguel-á-padriñán.jpg);
+     background-image: url(./websiteBackgroundBymiguel-á-padriñán.jpg);
    background-size:cover;
          -webkit-animation: slidein 50s;
          animation: slidein 40s;
