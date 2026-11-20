@@ -1,488 +1,436 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Rutuj's Portfolio</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
-      crossorigin="anonymous"
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Rutuj Dhongade | AI Systems Engineer</title>
+    <meta
+      name="description"
+      content="Rutuj Dhongade is an AI systems engineer. He builds AI agents, integrations and data systems that teams use every day."
     />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Agbalumo&family=Caveat&family=Josefin+Sans:wght@500&family=Libre+Baskerville&family=Nixie+One&family=Young+Serif&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="./style.css" />
+    <meta name="author" content="Rutuj Dhongade" />
+    <link rel="canonical" href="https://root2j.github.io/Portfolio/" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="theme-color" content="#e9f0f5" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://root2j.github.io/Portfolio/" />
+    <meta property="og:site_name" content="Rutuj Dhongade" />
+    <meta property="og:title" content="Rutuj Dhongade | AI Systems Engineer" />
+    <meta property="og:description" content="I build AI agents, integrations and data systems that teams use every day." />
+    <meta property="og:image" content="https://root2j.github.io/Portfolio/assets/img/og.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Rutuj Dhongade, AI Systems Engineer." />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png" />
+
+    <script>
+      (function () {
+        var d = document.documentElement;
+        d.classList.add("js");
+        try {
+          var t = localStorage.getItem("theme");
+          if (t === "light" || t === "dark") d.dataset.theme = t;
+        } catch (e) {}
+      })();
+    </script>
+
+    <link rel="preload" href="assets/fonts/archivo-latin.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="assets/fonts/jetbrains-mono-latin.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" as="image" href="assets/img/sky-1920.avif" type="image/avif" media="(min-width: 801px)" />
+    <link rel="preload" as="image" href="assets/img/sky-1280.avif" type="image/avif" media="(max-width: 800px)" />
+    <link rel="stylesheet" href="assets/css/site.css" />
+    <script src="assets/js/vendor/gsap.min.js" defer></script>
+    <script src="assets/js/vendor/ScrollTrigger.min.js" defer></script>
+    <script src="assets/js/vendor/lenis.min.js" defer></script>
+    <script src="assets/js/app.js" defer></script>
+    <script src="assets/js/sky.js" type="module"></script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Rutuj Dhongade",
+        "jobTitle": "AI Systems Engineer",
+        "url": "https://root2j.github.io/Portfolio/",
+        "image": "https://root2j.github.io/Portfolio/assets/img/profile-560.jpg",
+        "email": "mailto:dhongaderutuj@gmail.com",
+        "sameAs": ["https://github.com/root2j", "https://www.linkedin.com/in/rutuj-dhongade"],
+        "worksFor": { "@type": "Organization", "name": "Kala Group" },
+        "alumniOf": { "@type": "CollegeOrUniversity", "name": "Pimpri Chinchwad College of Engineering" }
+      }
+    </script>
   </head>
 
-  <body class="css-selector">
-    <section class="Navbar">
-      <nav class="navbar navbar-expand-lg navbar-light p-3 nav">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#">My Portfolio</a>
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarNavDropdown"
-            aria-controls="navbarNavDropdown"
-            aria-expanded="true"
-            aria-label="Toggle navigation"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
+  <body>
+    <svg class="defs" aria-hidden="true" focusable="false">
+      <!-- Liquid glass (Chromium): app.js draws a displacement map for the nav
+           bar and one for the lens, and sets each scale. Whatever is behind the
+           glass is bent by the map; red, green and blue bend by slightly
+           different amounts, so the edges split colour the way real glass does. -->
+      <filter id="lg-nav" x="0" y="0" width="100%" height="100%" color-interpolation-filters="sRGB">
+        <feImage class="lg-map" x="0" y="0" width="1" height="1" preserveAspectRatio="none" result="map" />
+        <feDisplacementMap class="lg-disp" data-ch="r" in="SourceGraphic" in2="map" scale="0" xChannelSelector="R" yChannelSelector="G" result="dr" />
+        <feColorMatrix in="dr" type="matrix" values="1 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 1 0" result="r" />
+        <feDisplacementMap class="lg-disp" data-ch="g" in="SourceGraphic" in2="map" scale="0" xChannelSelector="R" yChannelSelector="G" result="dg" />
+        <feColorMatrix in="dg" type="matrix" values="0 0 0 0 0  0 1 0 0 0  0 0 0 0 0  0 0 0 1 0" result="g" />
+        <feDisplacementMap class="lg-disp" data-ch="b" in="SourceGraphic" in2="map" scale="0" xChannelSelector="R" yChannelSelector="G" result="db" />
+        <feColorMatrix in="db" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 1 0 0  0 0 0 1 0" result="b" />
+        <feBlend in="r" in2="g" mode="screen" result="rg" />
+        <feBlend in="rg" in2="b" mode="screen" />
+      </filter>
+      <!-- The lens has a map per colour, so only its rim splits colour and the
+           label it magnifies stays crisp. -->
+      <filter id="lg-lens" x="0" y="0" width="100%" height="100%" color-interpolation-filters="sRGB">
+        <feImage class="lg-map" data-ch="r" x="0" y="0" width="1" height="1" preserveAspectRatio="none" result="mr" />
+        <feImage class="lg-map" data-ch="g" x="0" y="0" width="1" height="1" preserveAspectRatio="none" result="mg" />
+        <feImage class="lg-map" data-ch="b" x="0" y="0" width="1" height="1" preserveAspectRatio="none" result="mb" />
+        <feDisplacementMap class="lg-disp" in="SourceGraphic" in2="mr" scale="0" xChannelSelector="R" yChannelSelector="G" result="dr" />
+        <feColorMatrix in="dr" type="matrix" values="1 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 1 0" result="r" />
+        <feDisplacementMap class="lg-disp" in="SourceGraphic" in2="mg" scale="0" xChannelSelector="R" yChannelSelector="G" result="dg" />
+        <feColorMatrix in="dg" type="matrix" values="0 0 0 0 0  0 1 0 0 0  0 0 0 0 0  0 0 0 1 0" result="g" />
+        <feDisplacementMap class="lg-disp" in="SourceGraphic" in2="mb" scale="0" xChannelSelector="R" yChannelSelector="G" result="db" />
+        <feColorMatrix in="db" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 1 0 0  0 0 0 1 0" result="b" />
+        <feBlend in="r" in2="g" mode="screen" result="rg" />
+        <feBlend in="rg" in2="b" mode="screen" />
+      </filter>
+      <!-- Icons: Tabler Icons 3.52.0 (MIT), outline set -->
+      <symbol id="i-github" viewBox="0 0 24 24"><path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" /></symbol>
+      <symbol id="i-linkedin" viewBox="0 0 24 24"><path d="M8 11v5" /><path d="M8 8v.01" /><path d="M12 16v-5" /><path d="M16 16v-3a2 2 0 1 0 -4 0" /><path d="M3 7a4 4 0 0 1 4 -4h10a4 4 0 0 1 4 4v10a4 4 0 0 1 -4 4h-10a4 4 0 0 1 -4 -4l0 -10" /></symbol>
+      <symbol id="i-mail" viewBox="0 0 24 24"><path d="M3 7a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10" /><path d="M3 7l9 6l9 -6" /></symbol>
+      <symbol id="i-file" viewBox="0 0 24 24"><path d="M14 3v4a1 1 0 0 0 1 1h4" /><path d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2" /><path d="M9 9l1 0" /><path d="M9 13l6 0" /><path d="M9 17l6 0" /></symbol>
+      <symbol id="i-sun" viewBox="0 0 24 24"><path d="M8 12a4 4 0 1 0 8 0a4 4 0 1 0 -8 0" /><path d="M3 12h1m8 -9v1m8 8h1m-9 8v1m-6.4 -15.4l.7 .7m12.1 -.7l-.7 .7m0 11.4l.7 .7m-12.1 -.7l-.7 .7" /></symbol>
+      <symbol id="i-moon" viewBox="0 0 24 24"><path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.920 12.446a9 9 0 1 1 -8.313 -12.454l0 .008" /></symbol>
+      <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 6l16 0" /><path d="M4 12l16 0" /><path d="M4 18l16 0" /></symbol>
+      <symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6l-12 12" /><path d="M6 6l12 12" /></symbol>
+      <symbol id="i-arrow-up-right" viewBox="0 0 24 24"><path d="M17 7l-10 10" /><path d="M8 7l9 0l0 9" /></symbol>
+      <symbol id="i-arrow-up" viewBox="0 0 24 24"><path d="M12 5l0 14" /><path d="M18 11l-6 -6" /><path d="M6 11l6 -6" /></symbol>
+    </svg>
 
-          <div class="collapse navbar-collapse" id="navbarNavDropdown">
-            <ul class="navbar-nav ms-auto">
-              <li class="nav-item">
-                <a class="nav-link mx-2 active" aria-current="page" href="#home"
-                  >Home</a
-                >
-              </li>
-              <li class="nav-item">
-                <a class="nav-link mx-2" href="#achievements">Achievements</a>
-              </li>
-              <li class="nav-item dropdown">
-                <a
-                  class="nav-link mx-2 dropdown-toggle"
-                  href="#"
-                  id="navbarDropdownMenuLink"
-                  role="button"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                >
-                  Contact me
-                </a>
-                <ul
-                  class="dropdown-menu"
-                  aria-labelledby="navbarDropdownMenuLink"
-                  style="background-color: #ffffff00; margin: 20px"
-                >
-                  <li>
-                    <a
-                      class="dropdown-item"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      href="https://www.linkedin.com/in/rutuj-dhongade-ba9483259/"
-                      >LinkedIn</a
-                    >
-                  </li>
-                  <li>
-                    <a
-                      class="dropdown-item"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      href="https://leetcode.com/root2j/"
-                      >LeetCode</a
-                    >
-                  </li>
-                  <li>
-                    <a
-                      class="dropdown-item"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      href="https://www.instagram.com/rutuj_dhongade/"
-                      >Instagram</a
-                    >
-                  </li>
-                  <li>
-                    <a
-                      class="dropdown-item"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      href="https://github.com/root2j"
-                      >Github</a
-                    >
-                  </li>
-                </ul>
-              </li>
-            </ul>
-            <ul class="navbar-nav ms-auto d-none d-lg-inline-flex">
-              <li class="nav-item mx-2">
-                <a
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  href="https://github.com/root2j"
-                >
-                  <svg
-                    height="39"
-                    aria-hidden="true"
-                    viewBox="0 0 16 16"
-                    version="1.1"
-                    width="39"
-                    data-view-component="true"
-                    class="octicon octicon-mark-github v-align-middle"
-                  >
-                    <path
-                      d="M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z"
-                    ></path>
-                  </svg>
-                </a>
-              </li>
-              <li class="nav-item mx-2">
-                <a
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  href="https://www.linkedin.com/in/rutuj-dhongade-ba9483259/"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    x="0px"
-                    y="3px"
-                    width="40"
-                    height="40"
-                    viewBox="0 0 50 50"
-                  >
-                    <path
-                      d="M 9 4 C 6.2504839 4 4 6.2504839 4 9 L 4 41 C 4 43.749516 6.2504839 46 9 46 L 41 46 C 43.749516 46 46 43.749516 46 41 L 46 9 C 46 6.2504839 43.749516 4 41 4 L 9 4 z M 9 6 L 41 6 C 42.668484 6 44 7.3315161 44 9 L 44 41 C 44 42.668484 42.668484 44 41 44 L 9 44 C 7.3315161 44 6 42.668484 6 41 L 6 9 C 6 7.3315161 7.3315161 6 9 6 z M 14 11.011719 C 12.904779 11.011719 11.919219 11.339079 11.189453 11.953125 C 10.459687 12.567171 10.011719 13.484511 10.011719 14.466797 C 10.011719 16.333977 11.631285 17.789609 13.691406 17.933594 A 0.98809878 0.98809878 0 0 0 13.695312 17.935547 A 0.98809878 0.98809878 0 0 0 14 17.988281 C 16.27301 17.988281 17.988281 16.396083 17.988281 14.466797 A 0.98809878 0.98809878 0 0 0 17.986328 14.414062 C 17.884577 12.513831 16.190443 11.011719 14 11.011719 z M 14 12.988281 C 15.392231 12.988281 15.94197 13.610038 16.001953 14.492188 C 15.989803 15.348434 15.460091 16.011719 14 16.011719 C 12.614594 16.011719 11.988281 15.302225 11.988281 14.466797 C 11.988281 14.049083 12.140703 13.734298 12.460938 13.464844 C 12.78117 13.19539 13.295221 12.988281 14 12.988281 z M 11 19 A 1.0001 1.0001 0 0 0 10 20 L 10 39 A 1.0001 1.0001 0 0 0 11 40 L 17 40 A 1.0001 1.0001 0 0 0 18 39 L 18 33.134766 L 18 20 A 1.0001 1.0001 0 0 0 17 19 L 11 19 z M 20 19 A 1.0001 1.0001 0 0 0 19 20 L 19 39 A 1.0001 1.0001 0 0 0 20 40 L 26 40 A 1.0001 1.0001 0 0 0 27 39 L 27 29 C 27 28.170333 27.226394 27.345035 27.625 26.804688 C 28.023606 26.264339 28.526466 25.940057 29.482422 25.957031 C 30.468166 25.973981 30.989999 26.311669 31.384766 26.841797 C 31.779532 27.371924 32 28.166667 32 29 L 32 39 A 1.0001 1.0001 0 0 0 33 40 L 39 40 A 1.0001 1.0001 0 0 0 40 39 L 40 28.261719 C 40 25.300181 39.122788 22.95433 37.619141 21.367188 C 36.115493 19.780044 34.024172 19 31.8125 19 C 29.710483 19 28.110853 19.704889 27 20.423828 L 27 20 A 1.0001 1.0001 0 0 0 26 19 L 20 19 z M 12 21 L 16 21 L 16 33.134766 L 16 38 L 12 38 L 12 21 z M 21 21 L 25 21 L 25 22.560547 A 1.0001 1.0001 0 0 0 26.798828 23.162109 C 26.798828 23.162109 28.369194 21 31.8125 21 C 33.565828 21 35.069366 21.582581 36.167969 22.742188 C 37.266572 23.901794 38 25.688257 38 28.261719 L 38 38 L 34 38 L 34 29 C 34 27.833333 33.720468 26.627107 32.990234 25.646484 C 32.260001 24.665862 31.031834 23.983076 29.517578 23.957031 C 27.995534 23.930001 26.747519 24.626988 26.015625 25.619141 C 25.283731 26.611293 25 27.829667 25 29 L 25 38 L 21 38 L 21 21 z"
-                    ></path>
-                  </svg>
-                </a>
-              </li>
-              <li class="nav-item mx-2">
-                <a
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  href="https://www.instagram.com/rutuj_dhongade/"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    x="0px"
-                    y="0px"
-                    width="40"
-                    height="40"
-                    viewBox="0 0 50 50"
-                  >
-                    <path
-                      d="M 16 3 C 8.8324839 3 3 8.8324839 3 16 L 3 34 C 3 41.167516 8.8324839 47 16 47 L 34 47 C 41.167516 47 47 41.167516 47 34 L 47 16 C 47 8.8324839 41.167516 3 34 3 L 16 3 z M 16 5 L 34 5 C 40.086484 5 45 9.9135161 45 16 L 45 34 C 45 40.086484 40.086484 45 34 45 L 16 45 C 9.9135161 45 5 40.086484 5 34 L 5 16 C 5 9.9135161 9.9135161 5 16 5 z M 37 11 A 2 2 0 0 0 35 13 A 2 2 0 0 0 37 15 A 2 2 0 0 0 39 13 A 2 2 0 0 0 37 11 z M 25 14 C 18.936712 14 14 18.936712 14 25 C 14 31.063288 18.936712 36 25 36 C 31.063288 36 36 31.063288 36 25 C 36 18.936712 31.063288 14 25 14 z M 25 16 C 29.982407 16 34 20.017593 34 25 C 34 29.982407 29.982407 34 25 34 C 20.017593 34 16 29.982407 16 25 C 16 20.017593 20.017593 16 25 16 z"
-                    ></path>
-                  </svg>
-                </a>
-              </li>
-              <li class="nav-item mx-2">
-                <a
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  href="https://leetcode.com/root2j/"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    x="0px"
-                    y="0px"
-                    width="35"
-                    height="35"
-                    viewBox="0 0 16 16"
-                  >
-                    <path
-                      d="M 10.447266 0.265625 A 0.50005 0.50005 0 0 0 10.103516 0.41796875 L 5.65625 4.8671875 L 3.0957031 7.4257812 A 0.50005 0.50005 0 0 0 2.9785156 7.6035156 C 1.769869 8.9739016 1.7865696 11.063913 3.0957031 12.373047 L 5.65625 14.933594 C 7.0176322 16.294976 9.242133 16.294976 10.603516 14.933594 L 12.853516 12.683594 A 0.50063809 0.50063809 0 1 0 12.144531 11.976562 L 9.8945312 14.226562 C 8.9159134 15.20518 7.3418991 15.20518 6.3632812 14.226562 L 3.8027344 11.666016 C 2.8241166 10.687398 2.8241166 9.1114303 3.8027344 8.1328125 L 6.3632812 5.5742188 C 7.3418991 4.5956009 8.9159135 4.5956009 9.8945312 5.5742188 L 12.144531 7.8242188 A 0.50063784 0.50063784 0 1 0 12.853516 7.1171875 L 10.603516 4.8671875 C 9.9106907 4.174363 8.9943718 3.8431189 8.0820312 3.8554688 L 10.8125 1.125 A 0.50005 0.50005 0 0 0 10.447266 0.265625 z M 7.328125 9.4003906 A 0.50005 0.50005 0 1 0 7.328125 10.400391 L 14.228516 10.400391 A 0.50005 0.50005 0 1 0 14.228516 9.4003906 L 7.328125 9.4003906 z"
-                    ></path>
-                  </svg>
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
+    <div class="loader" aria-hidden="true">
+      <p class="loader__word">Rutuj Dhongade</p>
+      <div class="loader__bar"><span></span></div>
+    </div>
+
+    <div class="sky" aria-hidden="true"></div>
+    <div class="grain" aria-hidden="true"></div>
+    <a class="skip" href="#main">Skip to content</a>
+
+    <header class="nav">
+      <span class="nav__glass" aria-hidden="true"></span>
+      <a class="nav__brand" href="#top">
+        <span class="nav__mono" aria-hidden="true">RD</span>
+        <span class="nav__name">Rutuj Dhongade</span>
+      </a>
+      <nav class="nav__links" id="site-nav" aria-label="Sections">
+        <ul>
+          <li><a href="#work">Work</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#about">About</a></li>
+        </ul>
+        <span class="nav__lens" aria-hidden="true"></span>
       </nav>
-    </section>
-
-    <section class="title" style="height: 100vh" id="home">
-      <div
-        class="nine d-flex flex-column align-items-center justify-content-center"
-        style="height: 100%; width: 100%"
-      >
-        <div class="py-5">
-          <img
-            src="./ProfilePic.jpeg"
-            class="img-fluid aos-init aos-animate image"
-            alt=""
-            data-aos="zoom-out"
-            data-aos-delay="100"
-          />
-        </div>
-        <div
-          class="nine d-flex flex-column justify-content-center"
-          style="width: 100%"
-        >
-          <h1 style="width: 100%">
-            Hi! I'm Rutuj Jaykumar Dhongade<span class="py-5"
-              >Currently I am traveling in the vast world of the Computer
-              Science!</span
-            >
-          </h1>
-        </div>
+      <div class="nav__end">
+        <button class="chip nav__motion" type="button" hidden>Motion: on</button>
+        <button class="icon-btn theme-toggle" type="button" aria-label="Switch to light theme">
+          <svg class="icon i-sun" aria-hidden="true"><use href="#i-sun" /></svg>
+          <svg class="icon i-moon" aria-hidden="true"><use href="#i-moon" /></svg>
+        </button>
+        <a class="btn btn--accent btn--sm nav__cta" href="mailto:dhongaderutuj@gmail.com">Email me</a>
+        <button class="icon-btn menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+          <svg class="icon i-open" aria-hidden="true"><use href="#i-menu" /></svg>
+          <svg class="icon i-close" aria-hidden="true"><use href="#i-x" /></svg>
+          <span class="sr-only">Menu</span>
+        </button>
       </div>
-    </section>
+    </header>
 
-    <section class="achievements" id="achievements">
-      <div><h2>My Achievements</h2></div>
-      <div>
-        <div class="px-4 pb-5" id="icon-grid">
-          <div class="row row-cols-1 row-cols-lg-3 g-4 py-5">
-            <div class="col d-flex">
-              <div>
-                <svg
-                  viewBox="32.18585611720149 20.47 223.6851360941233 247.05999999999997"
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="5rem"
-                  height="5rem"
-                >
-                  <path
-                    d="M252.71 93.61a21.67 21.67 0 0 0-2.65-10.87 20.74 20.74 0 0 0-7.87-7.67Q198.77 50 155.32 25c-7.8-4.51-15.36-4.35-23.11.23C120.69 32 63 65.09 45.81 75.06c-7.08 4.1-10.52 10.38-10.52 18.54v100.8a21.77 21.77 0 0 0 2.55 10.66 20.63 20.63 0 0 0 8 7.88c17.19 10 74.89 43.05 86.41 49.85 7.75 4.58 15.31 4.74 23.12.23q43.41-25.08 86.87-50.09a20.63 20.63 0 0 0 8-7.88 21.77 21.77 0 0 0 2.55-10.66V93.61z"
-                    fill="#004482"
-                  />
-                  <path
-                    d="M252.73 194.4a21.72 21.72 0 0 1-2.55 10.66 18.58 18.58 0 0 1-1.45 2.24L144 144l98.19-68.93a20.72 20.72 0 0 1 7.86 7.67 21.57 21.57 0 0 1 2.66 10.87c.02 33.6.02 100.79.02 100.79z"
-                    fill="#00599c"
-                  />
-                  <path
-                    d="M250.05 82.74L37.81 205.06a21.75 21.75 0 0 1-2.53-10.65V93.6c0-8.16 3.45-14.44 10.52-18.54C63 65.09 120.69 32 132.22 25.21c7.73-4.58 15.3-4.74 23.1-.23q43.41 25.08 86.87 50.09a20.72 20.72 0 0 1 7.86 7.67z"
-                    fill="#659ad2"
-                  />
-                  <path
-                    d="M148.2 184.72a39.91 39.91 0 0 1-35-20.63q-.53-.94-1-1.92A39.94 39.94 0 0 1 179 119.4c.53.64 1 1.31 1.53 2 .24.33.48.66.7 1l35.07-20.2q-1.28-2.06-2.68-4c-.49-.69-1-1.35-1.48-2A79.9 79.9 0 0 0 78 181.92c.34.64.69 1.27 1 1.9a79.91 79.91 0 0 0 136.86 3.62l-34.29-20.73a39.88 39.88 0 0 1-33.37 18.01z"
-                    fill="#fff"
-                  />
-                </svg>
-              </div>
-              <div style="padding-left: 1rem">
-                <h3 class="fw-bold text-body-emphasis">C</h3>
-                <p>
-                  My Programming journey began with C Language. With it, I can
-                  execute fairly low level programs.
-                </p>
-              </div>
-            </div>
-            <div class="col d-flex">
-              <div>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="5rem"
-                  height="5rem"
-                  viewBox="0 0 256 288"
-                  preserveAspectRatio="xMinYMin meet"
-                >
-                  <path
-                    d="M255.569 84.72c-.002-4.83-1.035-9.098-3.124-12.761-2.052-3.602-5.125-6.621-9.247-9.008-34.025-19.619-68.083-39.178-102.097-58.817-9.17-5.294-18.061-5.101-27.163.269C100.395 12.39 32.59 51.237 12.385 62.94 4.064 67.757.015 75.129.013 84.711 0 124.166.013 163.62 0 203.076c.002 4.724.991 8.909 2.988 12.517 2.053 3.711 5.169 6.813 9.386 9.254 20.206 11.703 88.02 50.547 101.56 58.536 9.106 5.373 17.997 5.565 27.17.269 34.015-19.64 68.075-39.198 102.105-58.817 4.217-2.44 7.333-5.544 9.386-9.252 1.994-3.608 2.985-7.793 2.987-12.518 0 0 0-78.889-.013-118.345"
-                    fill="#5C8DBC"
-                  />
-                  <path
-                    d="M128.182 143.509L2.988 215.593c2.053 3.711 5.169 6.813 9.386 9.254 20.206 11.703 88.02 50.547 101.56 58.536 9.106 5.373 17.997 5.565 27.17.269 34.015-19.64 68.075-39.198 102.105-58.817 4.217-2.44 7.333-5.544 9.386-9.252l-124.413-72.074"
-                    fill="#1A4674"
-                  />
-                  <path
-                    d="M91.101 164.861c7.285 12.718 20.98 21.296 36.69 21.296 15.807 0 29.58-8.687 36.828-21.541l-36.437-21.107-37.081 21.352"
-                    fill="#1A4674"
-                  />
-                  <path
-                    d="M255.569 84.72c-.002-4.83-1.035-9.098-3.124-12.761l-124.263 71.55 124.413 72.074c1.994-3.608 2.985-7.793 2.987-12.518 0 0 0-78.889-.013-118.345"
-                    fill="#1B598E"
-                  />
-                  <path
-                    d="M248.728 148.661h-9.722v9.724h-9.724v-9.724h-9.721v-9.721h9.721v-9.722h9.724v9.722h9.722v9.721M213.253 148.661h-9.721v9.724h-9.722v-9.724h-9.722v-9.721h9.722v-9.722h9.722v9.722h9.721v9.721"
-                    fill="#FFF"
-                  />
-                  <path
-                    d="M164.619 164.616c-7.248 12.854-21.021 21.541-36.828 21.541-15.71 0-29.405-8.578-36.69-21.296a42.062 42.062 0 0 1-5.574-20.968c0-23.341 18.923-42.263 42.264-42.263 15.609 0 29.232 8.471 36.553 21.059l36.941-21.272c-14.683-25.346-42.096-42.398-73.494-42.398-46.876 0-84.875 38-84.875 84.874 0 15.378 4.091 29.799 11.241 42.238 14.646 25.48 42.137 42.637 73.634 42.637 31.555 0 59.089-17.226 73.714-42.781l-36.886-21.371"
-                    fill="#FFF"
-                  />
-                </svg>
-              </div>
-              <div style="padding-left: 1rem">
-                <h3 class="fw-bold text-body-emphasis">C++</h3>
-                <p>
-                  With CPP I can code intermediate program using various
-                  concepts of OOPS.
-                </p>
-              </div>
-            </div>
-            <div class="col d-flex">
-              <div>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="5rem"
-                  height="5rem"
-                  viewBox="16 16 31 32"
-                  fill="none"
-                >
-                  <path
-                    d="M31.885 16c-8.124 0-7.617 3.523-7.617 3.523l.01 3.65h7.752v1.095H21.197S16 23.678 16 31.876c0 8.196 4.537 7.906 4.537 7.906h2.708v-3.804s-.146-4.537 4.465-4.537h7.688s4.32.07 4.32-4.175v-7.019S40.374 16 31.885 16zm-4.275 2.454c.771 0 1.395.624 1.395 1.395s-.624 1.395-1.395 1.395a1.393 1.393 0 0 1-1.395-1.395c0-.771.624-1.395 1.395-1.395z"
-                    fill="url(#a)"
-                  />
-                  <path
-                    d="M32.115 47.833c8.124 0 7.617-3.523 7.617-3.523l-.01-3.65H31.97v-1.095h10.832S48 40.155 48 31.958c0-8.197-4.537-7.906-4.537-7.906h-2.708v3.803s.146 4.537-4.465 4.537h-7.688s-4.32-.07-4.32 4.175v7.019s-.656 4.247 7.833 4.247zm4.275-2.454a1.393 1.393 0 0 1-1.395-1.395c0-.77.624-1.394 1.395-1.394s1.395.623 1.395 1.394c0 .772-.624 1.395-1.395 1.395z"
-                    fill="url(#b)"
-                  />
-                  <defs>
-                    <linearGradient
-                      id="a"
-                      x1="19.075"
-                      y1="18.782"
-                      x2="34.898"
-                      y2="34.658"
-                      gradientUnits="userSpaceOnUse"
-                    >
-                      <stop stop-color="#387EB8" />
-                      <stop offset="1" stop-color="#387EB8" />
-                    </linearGradient>
-                    <linearGradient
-                      id="b"
-                      x1="28.809"
-                      y1="28.882"
-                      x2="45.803"
-                      y2="45.163"
-                      gradientUnits="userSpaceOnUse"
-                    >
-                      <stop stop-color="#FFE052" />
-                      <stop offset="1" stop-color="#FFE052" />
-                    </linearGradient>
-                  </defs>
-                </svg>
-              </div>
-              <div style="padding-left: 1rem">
-                <h3 class="fw-bold text-body-emphasis">Python</h3>
-                <p>
-                  With Python, I have built simple projects and specialized
-                  myself in Data Science and Machine Learning domain of the
-                  python.
-                </p>
-              </div>
-            </div>
-            <div class="col d-flex">
-              <div>
-                <svg
-                  width="5rem"
-                  height="5rem"
-                  viewBox="-52.5 0 361 361"
-                  xmlns="http://www.w3.org/2000/svg"
-                  preserveAspectRatio="xMinYMin meet"
-                >
-                  <path
-                    d="M255.555 70.766l-23.241 260.36-104.47 28.962-104.182-28.922L.445 70.766h255.11z"
-                    fill="#E44D26"
-                  />
-                  <path
-                    d="M128 337.95l84.417-23.403 19.86-222.49H128V337.95z"
-                    fill="#F16529"
-                  />
-                  <path
-                    d="M82.82 155.932H128v-31.937H47.917l.764 8.568 7.85 88.01H128v-31.937H85.739l-2.919-32.704zM90.018 236.542h-32.06l4.474 50.146 65.421 18.16.147-.04V271.58l-.14.037-35.568-9.604-2.274-25.471z"
-                    fill="#EBEBEB"
-                  />
-                  <path
-                    d="M24.18 0h16.23v16.035h14.847V0h16.231v48.558h-16.23v-16.26H40.411v16.26h-16.23V0zM92.83 16.103H78.544V0h44.814v16.103h-14.295v32.455h-16.23V16.103h-.001zM130.47 0h16.923l10.41 17.062L168.203 0h16.93v48.558h-16.164V24.49l-11.166 17.265h-.28L146.35 24.49v24.068h-15.88V0zM193.21 0h16.235v32.508h22.824v16.05h-39.06V0z"
-                  />
-                  <path
-                    d="M127.89 220.573h39.327l-3.708 41.42-35.62 9.614v33.226l65.473-18.145.48-5.396 7.506-84.08.779-8.576H127.89v31.937zM127.89 155.854v.078h77.143l.64-7.178 1.456-16.191.763-8.568H127.89v31.86z"
-                    fill="#FFF"
-                  />
-                </svg>
-              </div>
-              <div style="padding-left: 1rem">
-                <h3 class="fw-bold text-body-emphasis">HTML</h3>
-                <p>
-                  My coding journey began with HTML. I can built a template for
-                  any website using various tag.
-                </p>
-              </div>
-            </div>
-            <div class="col d-flex">
-              <div>
-                <svg
-                  xmlns:dc="http://purl.org/dc/elements/1.1/"
-                  xmlns:cc="http://creativecommons.org/ns#"
-                  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-                  xmlns:svg="http://www.w3.org/2000/svg"
-                  xmlns="http://www.w3.org/2000/svg"
-                  xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-                  xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-                  width="5rem"
-                  height="5rem"
-                  viewBox="0 0 240.00001 240"
-                  id="svg3476"
-                  version="1.1"
-                  inkscape:version="0.92.4 (5da689c313, 2019-01-14)"
-                  sodipodi:docname="w3_css-official.svg"
-                >
-                  <defs id="defs3478" />
-                  <g
-                    inkscape:label="Calque 1"
-                    inkscape:groupmode="layer"
-                    id="layer1"
-                    transform="translate(-193.633,-548.36217)"
-                  >
-                    <g
-                      id="g3013"
-                      transform="matrix(0.46875001,0,0,0.46875001,194.74253,548.36217)"
-                    >
-                      <polygon
-                        id="polygon2989"
-                        points="107.644,470.877 74.633,100.62 437.367,100.62 404.321,470.819 255.778,512 "
-                        style="fill: #264de4"
-                      />
-                      <polygon
-                        id="polygon2991"
-                        points="376.03,447.246 404.27,130.894 256,130.894 256,480.523 "
-                        style="fill: #2965f1"
-                      />
-                      <polygon
-                        id="polygon2993"
-                        points="150.31,268.217 154.38,313.627 256,313.627 256,268.217 "
-                        style="fill: #ebebeb"
-                      />
-                      <polygon
-                        id="polygon2995"
-                        points="146.26,221.716 256,221.716 256,176.305 255.843,176.305 142.132,176.305 "
-                        style="fill: #ebebeb"
-                      />
-                      <polygon
-                        id="polygon2997"
-                        points="255.791,433.457 256,433.399 256,386.153 255.801,386.206 205.227,372.55 201.994,336.333 177.419,336.333 156.409,336.333 162.771,407.634 "
-                        style="fill: #ebebeb"
-                      />
-                      <path
-                        id="path2999"
-                        d="m 160,0 h 55 v 23 h -32 v 23 h 32 v 23 h -55 z"
-                        inkscape:connector-curvature="0"
-                      />
-                      <path
-                        id="path3001"
-                        d="m 226,0 h 55 v 20 h -32 v 4 h 32 V 70 H 226 V 49 h 32 v -4 h -32 z"
-                        inkscape:connector-curvature="0"
-                      />
-                      <path
-                        id="path3003"
-                        d="m 292,0 h 55 v 20 h -32 v 4 h 32 V 70 H 292 V 49 h 32 v -4 h -32 z"
-                        inkscape:connector-curvature="0"
-                      />
-                      <polygon
-                        id="polygon3005"
-                        points="369.597,176.305 255.843,176.305 255.843,221.716 319.831,221.716 315.699,268.217 255.843,268.217 255.843,313.627 311.761,313.627 306.49,372.521 255.843,386.191 255.843,433.435 348.937,407.634 349.62,399.962 360.291,280.411 361.399,268.217 "
-                        style="fill: #ffffff"
-                      />
-                    </g>
-                  </g>
-                </svg>
-              </div>
-              <div style="padding-left: 1rem">
-                <h3 class="fw-bold text-body-emphasis">CSS</h3>
-                <p>
-                  With CSS I can style the webpage using bare CSS and frameworks
-                  like Bootstrap.
-                </p>
-              </div>
+    <main id="main">
+      <!-- Hero: the name over the living sky (assets/js/sky.js). -->
+      <section class="hero" id="top" aria-labelledby="hero-title">
+        <div class="hero__copy">
+          <p class="eyebrow">AI systems engineer</p>
+          <h1 class="hero__name" id="hero-title">
+            <span class="line"><span>Rutuj</span></span>
+            <span class="line"><span>Dhongade</span></span>
+          </h1>
+          <div class="hero__row">
+            <p class="hero__lede">I build AI agents, integrations and data systems that teams use every day.</p>
+            <div class="hero__ctas">
+              <a class="btn btn--accent" href="mailto:dhongaderutuj@gmail.com">
+                <svg class="icon" aria-hidden="true"><use href="#i-mail" /></svg>Email me
+              </a>
+              <a class="btn btn--ghost" href="assets/Rutuj-Dhongade-Resume.pdf" type="application/pdf">
+                <svg class="icon" aria-hidden="true"><use href="#i-file" /></svg>Resume
+              </a>
+              <a class="btn btn--ghost" href="https://github.com/root2j" rel="me">
+                <svg class="icon" aria-hidden="true"><use href="#i-github" /></svg>GitHub
+              </a>
+              <a class="btn btn--ghost" href="https://www.linkedin.com/in/rutuj-dhongade" rel="me">
+                <svg class="icon" aria-hidden="true"><use href="#i-linkedin" /></svg>LinkedIn
+              </a>
             </div>
           </div>
         </div>
+      </section>
+
+      <div class="marquee" aria-hidden="true">
+        <div class="marquee__track">
+          <span class="marquee__item">Claude Code<i>✱</i>MCP<i>✱</i>Agents<i>✱</i>Python<i>✱</i>SQL<i>✱</i>CI/CD<i>✱</i></span>
+          <span class="marquee__item">Claude Code<i>✱</i>MCP<i>✱</i>Agents<i>✱</i>Python<i>✱</i>SQL<i>✱</i>CI/CD<i>✱</i></span>
+          <span class="marquee__item">Claude Code<i>✱</i>MCP<i>✱</i>Agents<i>✱</i>Python<i>✱</i>SQL<i>✱</i>CI/CD<i>✱</i></span>
+          <span class="marquee__item">Claude Code<i>✱</i>MCP<i>✱</i>Agents<i>✱</i>Python<i>✱</i>SQL<i>✱</i>CI/CD<i>✱</i></span>
+        </div>
       </div>
-    </section>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-      crossorigin="anonymous"
-    ></script>
+
+      <!-- Case studies: cards stack as you scroll; each diagram draws itself in. -->
+      <section class="work" id="work" aria-labelledby="work-title">
+        <div class="section-head">
+          <h2 class="display h2" id="work-title" data-split>Systems teams<br />use every day.</h2>
+          <p class="section-note">Simplified, anonymised versions of things I've built at work.</p>
+        </div>
+
+        <div class="stack">
+          <article class="case" aria-labelledby="case-agent">
+            <h3 class="case__title" id="case-agent">Answers from data, in plain English</h3>
+            <p class="case__lede">People needed answers from data, but getting them meant knowing SQL and where everything lived. I built an AI agent that finds the relevant data, writes the query and runs it behind read-only guardrails, logging every step.</p>
+            <figure class="case__diagram diagram">
+              <!-- diagram:agent -->
+<svg class="dg dg-wide" viewBox="0 0 1000 196" role="img" aria-labelledby="dg-agent-wide-t dg-agent-wide-d"><title id="dg-agent-wide-t">How the AI agent answers a question</title><desc id="dg-agent-wide-d">A question in plain English goes to the agent, which finds the relevant data and writes a query. Guardrails allow only safe, read-only access, the data source runs it, and the answer comes back. Each step is logged.</desc><g class="dg-node" style="--d:0.00s"><rect class="dg-shadow" x="11" y="13" width="135.5" height="72" rx="10"/><rect class="dg-bg" x="6" y="8" width="135.5" height="72" rx="10"/><path class="dg-stroke" d="M20.2 8.2Q73.8 5.6 132.3 8.5Q142.3 8.3 140.4 19.2Q141.6 44 142.9 71Q140.2 81.7 130.1 80.7Q73.8 78.1 15.9 79.5Q5 81.5 7 68.4Q3.3 44 6.9 18.7Q7.2 7.6 23.3 7.8" pathLength="1"/><path class="dg-stroke is-second" d="M20.3 7.7Q74.4 7.3 131.1 6.9Q140.2 7.8 140.9 16.8Q138.6 43.6 142.6 70.5Q141.2 78.9 131.1 79.3Q74.4 80.8 16.2 81.8Q6.3 79.9 8.6 71.4Q9.7 43.6 6.9 16.9Q8.1 6.7 27.8 6.4" pathLength="1"/><text class="dg-text dg-title" x="73.8" y="40.3" font-size="22">Question</text><text class="dg-text dg-sub" x="73.8" y="60.3" font-size="16.5">in plain English</text></g><g class="dg-node" style="--d:0.28s"><rect class="dg-shadow" x="180.5" y="13" width="135.5" height="72" rx="10"/><rect class="dg-bg" x="175.5" y="8" width="135.5" height="72" rx="10"/><path class="dg-stroke" d="M187.2 8.3Q243.2 6.4 299.5 7.8Q312.7 8.9 309.8 16.9Q309.5 44 310.7 71Q309.7 78.9 299.8 81.4Q243.2 79.7 184.5 79.3Q174.6 81.1 174.8 71.4Q174.5 44 175.6 16.4Q176.2 7.8 195.4 7.3" pathLength="1"/><path class="dg-stroke is-second" d="M190.1 6Q243.9 7.7 301.8 8.2Q311.3 5.3 311.9 16.9Q310.8 43.6 311.8 70.9Q310.9 80.9 300.8 80.6Q243.9 81.9 187.3 79.8Q175.2 78.9 177.7 71.3Q176.8 43.6 177.9 15.2Q176.4 6 196.1 6.5" pathLength="1"/><text class="dg-text dg-title" x="243.2" y="40.3" font-size="22">Find the data</text><text class="dg-text dg-sub" x="243.2" y="60.3" font-size="16.5">what&#x27;s relevant</text></g><g class="dg-node" style="--d:0.56s"><rect class="dg-shadow" x="350" y="13" width="135.5" height="72" rx="10"/><rect class="dg-bg" x="345" y="8" width="135.5" height="72" rx="10"/><path class="dg-stroke" d="M357.2 9.4Q412.8 8.6 471.1 8.8Q480.5 6.6 481.8 18.7Q480.5 44 480.1 69.7Q481.8 79.1 470 79.1Q412.8 81.4 356.7 79.1Q344.6 78.8 346.5 71.3Q343.5 44 344.6 19Q345.9 9.5 363.4 7.1" pathLength="1"/><path class="dg-stroke is-second" d="M359.9 6.3Q413.3 9.1 471.6 6.5Q479 5.7 481.9 15.2Q481.3 43.6 479 70.5Q481.5 81.2 469.2 80.1Q413.3 78 357.3 80.6Q346.5 81.4 345 70.7Q347.7 43.6 347.1 18.3Q348 5.7 366.9 5.7" pathLength="1"/><text class="dg-text dg-title" x="412.8" y="40.3" font-size="22">Write a query</text><text class="dg-text dg-sub" x="412.8" y="60.3" font-size="16.5">by the AI</text></g><g class="dg-node" style="--d:0.84s"><rect class="dg-shadow" x="519.5" y="13" width="135.5" height="72" rx="10"/><rect class="dg-bg" x="514.5" y="8" width="135.5" height="72" rx="10"/><path class="dg-stroke" d="M527.9 7.7Q582.2 7.9 641.3 8Q650.3 8.6 650.5 17.7Q647.5 44 650.8 70Q651.2 81.6 640.7 79.5Q582.2 80.4 523.5 79.6Q514.7 81 514.4 70.5Q511.8 44 512.8 17.2Q514 7.2 534.6 7.9" pathLength="1"/><path class="dg-stroke is-second" d="M528.6 5.2Q582.8 7.5 638.2 5.9Q650.9 6.9 648.3 17.5Q650.2 43.6 648.9 70.4Q648.4 81.4 641 81.3Q582.8 80.4 525.1 80.8Q516.8 80.5 514.2 71.8Q517.4 43.6 515 15.7Q516.5 7.2 536.1 6.3" pathLength="1"/><text class="dg-text dg-title" x="582.2" y="40.3" font-size="22">Guardrails</text><text class="dg-text dg-sub" x="582.2" y="60.3" font-size="16.5">read-only checks</text></g><g class="dg-node" style="--d:1.12s"><rect class="dg-shadow" x="689" y="13" width="135.5" height="72" rx="10"/><rect class="dg-bg" x="684" y="8" width="135.5" height="72" rx="10"/><path class="dg-stroke" d="M697.1 8.3Q751.8 8.8 809.9 7.5Q819.1 8.4 820.5 18.8Q820.3 44 819.4 71.3Q820.3 81.7 808 79.1Q751.8 82.5 692.4 78.3Q682.5 79.6 685.2 70.3Q683.4 44 685 17.5Q682.3 9.1 702.3 7.1" pathLength="1"/><path class="dg-stroke is-second" d="M697.1 5.5Q752.3 4.4 810.9 6.7Q819.4 5.9 818.5 16.4Q820 43.6 818.8 70.2Q820.5 80.8 808.8 78.7Q752.3 79.7 694.2 81.1Q685.8 78.7 684.6 69.3Q684.6 43.6 684.7 15.4Q685.1 5.8 704.1 6.8" pathLength="1"/><text class="dg-text dg-title" x="751.8" y="40.3" font-size="22">Data source</text><text class="dg-text dg-sub" x="751.8" y="60.3" font-size="16.5">runs the query</text></g><g class="dg-node" style="--d:1.40s"><rect class="dg-shadow" x="858.5" y="13" width="135.5" height="72" rx="10"/><rect class="dg-bg" x="853.5" y="8" width="135.5" height="72" rx="10"/><path class="dg-stroke" d="M867.6 7.2Q921.2 7.1 980.2 7.1Q988.6 8.1 987.4 18.2Q986.7 44 988.2 68.3Q989.8 78.8 978 79.4Q921.2 77.3 862.5 78.7Q851.9 81.6 853.9 70.7Q854.7 44 853.4 18.8Q855.2 6.8 873.9 7.6" pathLength="1"/><path class="dg-stroke is-second" d="M866.4 5.5Q921.8 9.3 979.1 6.6Q988.3 7.9 989.2 15.8Q991.2 43.6 988.7 71.8Q989.6 78.8 978.4 79.7Q921.8 78 864.4 79.2Q853.8 81.8 855.2 70.8Q855.1 43.6 853.6 15.7Q856.5 6.8 873.5 5.5" pathLength="1"/><text class="dg-text dg-title" x="921.2" y="40.3" font-size="22">Answer</text><text class="dg-text dg-sub" x="921.2" y="60.3" font-size="16.5">back to the user</text></g><path id="dg-agent-w-c0" class="dg-line" d="M145 43.5Q158.5 45.1 171.5 44" pathLength="1" style="--d:0.20s"/><path class="dg-head" d="M163.6 48.4L171.5 44L163.4 41.2" style="--d:0.20s"/><path id="dg-agent-w-c1" class="dg-line" d="M315.5 43.5Q328 42.7 341 44" pathLength="1" style="--d:0.48s"/><path class="dg-head" d="M331.3 47.5L341 44L334.2 39.2" style="--d:0.48s"/><path id="dg-agent-w-c2" class="dg-line" d="M484.8 44.1Q497.5 43.1 510.5 44" pathLength="1" style="--d:0.76s"/><path class="dg-head" d="M503.1 47.9L510.5 44L502.3 39" style="--d:0.76s"/><path id="dg-agent-w-c3" class="dg-line" d="M653.8 44Q667 45.6 680 44" pathLength="1" style="--d:1.04s"/><path class="dg-head" d="M673.4 49.2L680 44L670.8 39.8" style="--d:1.04s"/><path id="dg-agent-w-c4" class="dg-line" d="M822.9 43.9Q836.5 43.2 849.5 44" pathLength="1" style="--d:1.32s"/><path class="dg-head" d="M841.1 47.5L849.5 44L841.7 39.5" style="--d:1.32s"/><g class="dg-node is-aux" style="--d:1.70s"><rect class="dg-bg" x="175.5" y="128" width="644" height="58" rx="10"/><path class="dg-stroke" d="M188.2 129.4Q497.5 129.2 808.2 127.9Q819.3 128.8 820 136.3Q820.8 157 821 174.4Q821 186.1 809 186.9Q497.5 184.7 184 185.9Q176.2 186.9 174.1 177.1Q176.8 157 176 137Q175.7 129.3 196.2 127.7"/><text class="dg-text dg-title" x="497.5" y="153" font-size="21">Log</text><text class="dg-text dg-sub" x="497.5" y="173" font-size="16.5">every step is recorded</text></g><path id="dg-agent-w-l1" class="dg-line is-dashed" d="M243.6 84.8Q243.6 104 243.2 123" style="--d:1.80s"/><path class="dg-head is-dashed" d="M239.2 115.7L243.2 123L247.8 114" style="--d:1.80s"/><path id="dg-agent-w-l2" class="dg-line is-dashed" d="M412.4 84.5Q413.5 104 412.8 123" style="--d:1.90s"/><path class="dg-head is-dashed" d="M408.2 115.1L412.8 123L417.2 114" style="--d:1.90s"/><path id="dg-agent-w-l3" class="dg-line is-dashed" d="M582.8 84.8Q583.3 104 582.2 123" style="--d:2.00s"/><path class="dg-head is-dashed" d="M578.3 113.6L582.2 123L586.5 115.6" style="--d:2.00s"/><path id="dg-agent-w-l4" class="dg-line is-dashed" d="M751.8 84.8Q751.4 104 751.8 123" style="--d:2.10s"/><path class="dg-head is-dashed" d="M746.4 114L751.8 123L755.8 115.6" style="--d:2.10s"/><circle class="dg-dot" r="4.5" cx="0" cy="0" opacity="0"><animateMotion dur="5.15s" repeatCount="indefinite" calcMode="linear" keyPoints="0;1;1" keyTimes="0;0.1650;1"><mpath href="#dg-agent-w-c0"/></animateMotion><animate attributeName="opacity" dur="5.15s" repeatCount="indefinite" calcMode="discrete" values="1;0" keyTimes="0;0.1650"/></circle><circle class="dg-dot" r="4.5" cx="0" cy="0" opacity="0"><animateMotion dur="5.15s" repeatCount="indefinite" calcMode="linear" keyPoints="0;0;1;1" keyTimes="0;0.1650;0.3301;1"><mpath href="#dg-agent-w-c1"/></animateMotion><animate attributeName="opacity" dur="5.15s" repeatCount="indefinite" calcMode="discrete" values="0;1;0" keyTimes="0;0.1650;0.3301"/></circle><circle class="dg-dot" r="4.5" cx="0" cy="0" opacity="0"><animateMotion dur="5.15s" repeatCount="indefinite" calcMode="linear" keyPoints="0;0;1;1" keyTimes="0;0.3301;0.4951;1"><mpath href="#dg-agent-w-c2"/></animateMotion><animate attributeName="opacity" dur="5.15s" repeatCount="indefinite" calcMode="discrete" values="0;1;0" keyTimes="0;0.3301;0.4951"/></circle><circle class="dg-dot" r="4.5" cx="0" cy="0" opacity="0"><animateMotion dur="5.15s" repeatCount="indefinite" calcMode="linear" keyPoints="0;0;1;1" keyTimes="0;0.4951;0.6602;1"><mpath href="#dg-agent-w-c3"/></animateMotion><animate attributeName="opacity" dur="5.15s" repeatCount="indefinite" calcMode="discrete" values="0;1;0" keyTimes="0;0.4951;0.6602"/></circle><circle class="dg-dot" r="4.5" cx="0" cy="0" opacity="0"><animateMotion dur="5.15s" repeatCount="indefinite" calcMode="linear" keyPoints="0;0;1;1" keyTimes="0;0.6602;0.8252;1"><mpath href="#dg-agent-w-c4"/></animateMotion><animate attributeName="opacity" dur="5.15s" repeatCount="indefinite" calcMode="discrete" values="0;1;0" keyTimes="0;0.6602;0.8252"/></circle><circle class="dg-dot is-soft" r="3.5" cx="0" cy="0" opacity="0"><animateMotion dur="5.15s" repeatCount="indefinite" calcMode="linear" keyPoints="0;0;1;1" keyTimes="0;0.1650;0.2806;1"><mpath href="#dg-agent-w-l1"/></animateMotion><animate attributeName="opacity" dur="5.15s" repeatCount="indefinite" calcMode="discrete" values="0;1;0" keyTimes="0;0.1650;0.2806"/></circle><circle class="dg-dot is-soft" r="3.5" cx="0" cy="0" opacity="0"><animateMotion dur="5.15s" repeatCount="indefinite" calcMode="linear" keyPoints="0;0;1;1" keyTimes="0;0.3301;0.4456;1"><mpath href="#dg-agent-w-l2"/></animateMotion><animate attributeName="opacity" dur="5.15s" repeatCount="indefinite" calcMode="discrete" values="0;1;0" keyTimes="0;0.3301;0.4456"/></circle><circle class="dg-dot is-soft" r="3.5" cx="0" cy="0" opacity="0"><animateMotion dur="5.15s" repeatCount="indefinite" calcMode="linear" keyPoints="0;0;1;1" keyTimes="0;0.4951;0.6107;1"><mpath href="#dg-agent-w-l3"/></animateMotion><animate attributeName="opacity" dur="5.15s" repeatCount="indefinite" calcMode="discrete" values="0;1;0" keyTimes="0;0.4951;0.6107"/></circle><circle class="dg-dot is-soft" r="3.5" cx="0" cy="0" opacity="0"><animateMotion dur="5.15s" repeatCount="indefinite" calcMode="linear" keyPoints="0;0;1;1" keyTimes="0;0.6602;0.7757;1"><mpath href="#dg-agent-w-l4"/></animateMotion><animate attributeName="opacity" dur="5.15s" repeatCount="indefinite" calcMode="discrete" values="0;1;0" keyTimes="0;0.6602;0.7757"/></circle></svg>
+<svg class="dg dg-tall" viewBox="0 0 320 594" role="img" aria-labelledby="dg-agent-tall-t dg-agent-tall-d"><title id="dg-agent-tall-t">How the AI agent answers a question</title><desc id="dg-agent-tall-d">A question in plain English goes to the agent, which finds the relevant data and writes a query. Guardrails allow only safe, read-only access, the data source runs it, and the answer comes back. Each step is logged.</desc><g class="dg-node" style="--d:0.00s"><rect class="dg-shadow" x="11" y="13" width="170" height="66" rx="10"/><rect class="dg-bg" x="6" y="8" width="170" height="66" rx="10"/><path class="dg-stroke" d="M18.6 9.6Q91 9.2 167.4 7Q177.1 6.8 175 19.4Q174.1 41 176 62.7Q176.5 74.6 164.9 75.4Q91 75.5 15.9 73.6Q5.1 74.6 4.7 62.8Q7.7 41 5.3 17.6Q6.5 7 27 6.6" pathLength="1"/><path class="dg-stroke is-second" d="M21.8 6.8Q91.6 7.7 165.4 6Q175.4 7.3 175.4 15.8Q174.9 40.6 174.3 62.9Q175 75.4 164.3 73.5Q91.6 74.1 17.6 75.5Q7.1 72.7 5.8 64.9Q6.5 40.6 6.7 15.4Q7.9 6.7 28.4 5.4" pathLength="1"/><text class="dg-text dg-title" x="91" y="37" font-size="21">Question</text><text class="dg-text dg-sub" x="91" y="57" font-size="16">in plain English</text></g><g class="dg-node" style="--d:0.28s"><rect class="dg-shadow" x="11" y="115" width="170" height="66" rx="10"/><rect class="dg-bg" x="6" y="110" width="170" height="66" rx="10"/><path class="dg-stroke" d="M17.6 109.3Q91 112.6 166.5 111.5Q177.6 111.5 177.3 120.7Q177.6 143 175.2 167.7Q177.6 175.4 167.1 176.8Q91 176.2 17 177Q5.9 174.6 7.2 165.9Q6.3 143 4.6 119.8Q5.5 109.4 25.9 109.8" pathLength="1"/><path class="dg-stroke is-second" d="M22.1 109.8Q91.6 108.8 165.5 108.5Q174.7 108.5 174.6 120.2Q173.2 142.6 177.2 166.1Q177 176.3 164.9 176.9Q91.6 177.8 18 177.7Q7.9 177.7 6.4 165.3Q5.6 142.6 7.1 117.9Q6.7 108.5 27.3 107.5" pathLength="1"/><text class="dg-text dg-title" x="91" y="139" font-size="21">Find the data</text><text class="dg-text dg-sub" x="91" y="159" font-size="16">what&#x27;s relevant</text></g><g class="dg-node" style="--d:0.56s"><rect class="dg-shadow" x="11" y="217" width="170" height="66" rx="10"/><rect class="dg-bg" x="6" y="212" width="170" height="66" rx="10"/><path class="dg-stroke" d="M19.5 211.7Q91 209.9 166 211.2Q175.7 210.6 177.2 223.4Q174 245 174.7 266.7Q174.6 276.5 167.4 279.6Q91 276.5 17.1 278.7Q7.2 276.3 6.2 269.3Q7.8 245 5.5 222.2Q5.5 211.6 23.4 210.7" pathLength="1"/><path class="dg-stroke is-second" d="M20.8 212.5Q91.6 213.2 164.5 211.1Q175.4 212.3 175.1 222.3Q178.2 244.6 176.9 266.8Q176.3 279.5 165 278.7Q91.6 277.6 16.3 278.6Q6.2 279.4 7.8 268.7Q6.1 244.6 8.5 221.9Q5.8 212.3 26.4 210.2" pathLength="1"/><text class="dg-text dg-title" x="91" y="241" font-size="21">Write a query</text><text class="dg-text dg-sub" x="91" y="261" font-size="16">by the AI</text></g><g class="dg-node" style="--d:0.84s"><rect class="dg-shadow" x="11" y="319" width="170" height="66" rx="10"/><rect class="dg-bg" x="6" y="314" width="170" height="66" rx="10"/><path class="dg-stroke" d="M17.7 313.6Q91 311.5 165.6 314.8Q177.1 314.3 176.9 324.4Q176.8 347 176.6 369Q177.1 380.3 164.3 380.5Q91 378.1 16.8 378.8Q6.9 380.6 7.4 371.1Q8.5 347 5.3 322.5Q5.5 314.7 25.6 312.6" pathLength="1"/><path class="dg-stroke is-second" d="M20.6 313.6Q91.6 310.4 164.4 312.4Q174.4 311.2 176.7 322.8Q175.2 346.6 177.2 370.5Q175.9 379.8 167.2 380.8Q91.6 378.9 17.6 380.5Q8.4 379 8.8 369.3Q6.9 346.6 6.3 323.6Q7.4 311.3 24.6 312.2" pathLength="1"/><text class="dg-text dg-title" x="91" y="343" font-size="21">Guardrails</text><text class="dg-text dg-sub" x="91" y="363" font-size="16">read-only checks</text></g><g class="dg-node" style="--d:1.12s"><rect class="dg-shadow" x="11" y="421" width="170" height="66" rx="10"/><rect class="dg-bg" x="6" y="416" width="170" height="66" rx="10"/><path class="dg-stroke" d="M18.9 414.9Q91 416.6 165.8 414.4Q176.5 417.5 176 426.6Q177.6 449 174.9 472.5Q175.6 482.2 167.4 481.9Q91 484.5 14.6 481.5Q4.9 482 7.5 473.5Q8.4 449 5.6 424.7Q5.4 416.1 24.3 415.8" pathLength="1"/><path class="dg-stroke is-second" d="M21.8 415.5Q91.6 415.6 166.5 415.6Q175 413.7 175.1 424.7Q175.6 448.6 175.2 472.1Q176.7 481.6 164.3 481Q91.6 484.5 18.6 483.2Q6.4 481.7 7.9 470.9Q8.7 448.6 7.4 424.2Q8.6 416.1 27.7 413.7" pathLength="1"/><text class="dg-text dg-title" x="91" y="445" font-size="21">Data source</text><text class="dg-text dg-sub" x="91" y="465" font-size="16">runs the query</text></g><g class="dg-node" style="--d:1.40s"><rect class="dg-shadow" x="11" y="523" width="170" height="66" rx="10"/><rect class="dg-bg" x="6" y="518" width="170" height="66" rx="10"/><path class="dg-stroke" d="M19.4 518.4Q91 519.4 165.1 519.6Q177.7 518.9 177.7 529.3Q173.8 551 174.8 572.6Q175.8 585.5 165.5 582.6Q91 581.4 15.7 583.6Q7.6 584.9 5.9 574Q3.6 551 7.1 528.4Q7 518.9 23.8 516.5" pathLength="1"/><path class="dg-stroke is-second" d="M21.1 518.4Q91.6 518.8 165.6 518Q175.4 517.9 176.3 527.2Q177 550.6 175 574.6Q177.1 585.1 167.5 584.1Q91.6 585.7 16.1 582.7Q7.4 583.1 7.8 575.2Q9.7 550.6 7.9 525.3Q6.9 518.4 26 516.1" pathLength="1"/><text class="dg-text dg-title" x="91" y="547" font-size="21">Answer</text><text class="dg-text dg-sub" x="91" y="567" font-size="16">back to the user</text></g><path id="dg-agent-t-c0" class="dg-line" d="M91.1 78.4Q90 92 91 106" pathLength="1" style="--d:0.20s"/><path class="dg-head" d="M86.2 97.4L91 106L95.4 97.2" style="--d:0.20s"/><path id="dg-agent-t-c1" class="dg-line" d="M90.5 180.1Q92.5 194 91 208" pathLength="1" style="--d:0.48s"/><path class="dg-head" d="M87.4 199L91 208L96.3 200.3" style="--d:0.48s"/><path id="dg-agent-t-c2" class="dg-line" d="M90.5 282.3Q92.2 296 91 310" pathLength="1" style="--d:0.76s"/><path class="dg-head" d="M86.6 301.2L91 310L95.6 302" style="--d:0.76s"/><path id="dg-agent-t-c3" class="dg-line" d="M91.1 383.6Q90.8 398 91 412" pathLength="1" style="--d:1.04s"/><path class="dg-head" d="M86.8 403.4L91 412L95.2 404.5" style="--d:1.04s"/><path id="dg-agent-t-c4" class="dg-line" d="M90.8 486.2Q92.1 500 91 514" pathLength="1" style="--d:1.32s"/><path class="dg-head" d="M86.5 505.3L91 514L96 507.1" style="--d:1.32s"/><g class="dg-node is-aux" style="--d:1.70s"><rect class="dg-bg" x="212" y="110" width="102" height="372" rx="10"/><path class="dg-stroke" d="M223.8 110.3Q263 111.5 305.1 110.5Q313.6 108.5 312.8 120.3Q314.6 296 312.9 471.8Q315.7 481.2 302.4 483.2Q263 481 222 483.4Q213 483.1 210.7 472.8Q213.1 296 213.7 121Q212.6 110.1 230.2 109.8"/><text class="dg-text dg-title" x="263" y="282.9" font-size="19">Log</text><text class="dg-text dg-sub" x="263" y="302.9" font-size="15">every step</text><text class="dg-text dg-sub" x="263" y="319.9" font-size="15">is recorded</text></g><path id="dg-agent-t-l1" class="dg-line is-dashed" d="M180.9 143.3Q194 143.4 207 143" style="--d:1.80s"/><path class="dg-head is-dashed" d="M199.4 147.9L207 143L199.7 139.1" style="--d:1.80s"/><path id="dg-agent-t-l2" class="dg-line is-dashed" d="M180.5 244.5Q194 244.8 207 245" style="--d:1.90s"/><path class="dg-head is-dashed" d="M199.5 248.8L207 245L198.4 239.8" style="--d:1.90s"/><path id="dg-agent-t-l3" class="dg-line is-dashed" d="M180.6 346.5Q194 347.5 207 347" style="--d:2.00s"/><path class="dg-head is-dashed" d="M198.8 352.5L207 347L198.7 343.3" style="--d:2.00s"/><path id="dg-agent-t-l4" class="dg-line is-dashed" d="M180.8 448.6Q194 448.8 207 449" style="--d:2.10s"/><path class="dg-head is-dashed" d="M199.2 453.6L207 449L197.7 444.6" style="--d:2.10s"/><circle class="dg-dot" r="4.5" cx="0" cy="0" opacity="0"><animateMotion dur="5.15s" repeatCount="indefinite" calcMode="linear" keyPoints="0;1;1" keyTimes="0;0.1650;1"><mpath href="#dg-agent-t-c0"/></animateMotion><animate attributeName="opacity" dur="5.15s" repeatCount="indefinite" calcMode="discrete" values="1;0" keyTimes="0;0.1650"/></circle><circle class="dg-dot" r="4.5" cx="0" cy="0" opacity="0"><animateMotion dur="5.15s" repeatCount="indefinite" calcMode="linear" keyPoints="0;0;1;1" keyTimes="0;0.1650;0.3301;1"><mpath href="#dg-agent-t-c1"/></animateMotion><animate attributeName="opacity" dur="5.15s" repeatCount="indefinite" calcMode="discrete" values="0;1;0" keyTimes="0;0.1650;0.3301"/></circle><circle class="dg-dot" r="4.5" cx="0" cy="0" opacity="0"><animateMotion dur="5.15s" repeatCount="indefinite" calcMode="linear" keyPoints="0;0;1;1" keyTimes="0;0.3301;0.4951;1"><mpath href="#dg-agent-t-c2"/></animateMotion><animate attributeName="opacity" dur="5.15s" repeatCount="indefinite" calcMode="discrete" values="0;1;0" keyTimes="0;0.3301;0.4951"/></circle><circle class="dg-dot" r="4.5" cx="0" cy="0" opacity="0"><animateMotion dur="5.15s" repeatCount="indefinite" calcMode="linear" keyPoints="0;0;1;1" keyTimes="0;0.4951;0.6602;1"><mpath href="#dg-agent-t-c3"/></animateMotion><animate attributeName="opacity" dur="5.15s" repeatCount="indefinite" calcMode="discrete" values="0;1;0" keyTimes="0;0.4951;0.6602"/></circle><circle class="dg-dot" r="4.5" cx="0" cy="0" opacity="0"><animateMotion dur="5.15s" repeatCount="indefinite" calcMode="linear" keyPoints="0;0;1;1" keyTimes="0;0.6602;0.8252;1"><mpath href="#dg-agent-t-c4"/></animateMotion><animate attributeName="opacity" dur="5.15s" repeatCount="indefinite" calcMode="discrete" values="0;1;0" keyTimes="0;0.6602;0.8252"/></circle><circle class="dg-dot is-soft" r="3.5" cx="0" cy="0" opacity="0"><animateMotion dur="5.15s" repeatCount="indefinite" calcMode="linear" keyPoints="0;0;1;1" keyTimes="0;0.1650;0.2806;1"><mpath href="#dg-agent-t-l1"/></animateMotion><animate attributeName="opacity" dur="5.15s" repeatCount="indefinite" calcMode="discrete" values="0;1;0" keyTimes="0;0.1650;0.2806"/></circle><circle class="dg-dot is-soft" r="3.5" cx="0" cy="0" opacity="0"><animateMotion dur="5.15s" repeatCount="indefinite" calcMode="linear" keyPoints="0;0;1;1" keyTimes="0;0.3301;0.4456;1"><mpath href="#dg-agent-t-l2"/></animateMotion><animate attributeName="opacity" dur="5.15s" repeatCount="indefinite" calcMode="discrete" values="0;1;0" keyTimes="0;0.3301;0.4456"/></circle><circle class="dg-dot is-soft" r="3.5" cx="0" cy="0" opacity="0"><animateMotion dur="5.15s" repeatCount="indefinite" calcMode="linear" keyPoints="0;0;1;1" keyTimes="0;0.4951;0.6107;1"><mpath href="#dg-agent-t-l3"/></animateMotion><animate attributeName="opacity" dur="5.15s" repeatCount="indefinite" calcMode="discrete" values="0;1;0" keyTimes="0;0.4951;0.6107"/></circle><circle class="dg-dot is-soft" r="3.5" cx="0" cy="0" opacity="0"><animateMotion dur="5.15s" repeatCount="indefinite" calcMode="linear" keyPoints="0;0;1;1" keyTimes="0;0.6602;0.7757;1"><mpath href="#dg-agent-t-l4"/></animateMotion><animate attributeName="opacity" dur="5.15s" repeatCount="indefinite" calcMode="discrete" values="0;1;0" keyTimes="0;0.6602;0.7757"/></circle></svg>
+<!-- /diagram:agent -->
+            </figure>
+            <p class="case__lesson">What I took away: clear descriptions of the data did more for accuracy than clever prompts, and safety rules belong outside the model.</p>
+          </article>
+
+          <article class="case" aria-labelledby="case-notes">
+            <h3 class="case__title" id="case-notes">Notes that turn into tasks on their own</h3>
+            <p class="case__lede">Action items written down in notes rarely made it into the task tracker. Now an AI step reads the notes, returns tasks in a fixed format, and they're created in the tracker automatically.</p>
+            <figure class="case__diagram diagram">
+              <!-- diagram:notes -->
+<svg class="dg dg-wide" viewBox="0 0 1000 196" role="img" aria-labelledby="dg-notes-wide-t dg-notes-wide-d"><title id="dg-notes-wide-t">How free-text notes become tracked tasks</title><desc id="dg-notes-wide-d">Free-text notes go to an AI step that returns tasks in a fixed format. The tasks are created in the team&#x27;s task tracker, ready to assign.</desc><g class="dg-node" style="--d:0.00s"><rect class="dg-shadow" x="11" y="119" width="169.4" height="72" rx="10"/><rect class="dg-bg" x="6" y="114" width="169.4" height="72" rx="10"/><path class="dg-stroke" d="M20.6 113.4Q90.7 115.2 165.6 112.9Q174.8 114.9 173.9 123.6Q173.8 150 175.7 177.6Q176.2 186.4 164.4 186.2Q90.7 187.6 16.9 185.8Q5.3 185.6 6.6 174.5Q4.5 150 7.2 124.3Q5.8 114.6 25.4 112.8" pathLength="1"/><path class="dg-stroke is-second" d="M20.4 113Q91.3 115.4 165.8 113.3Q174 114.3 173.6 123.8Q176.8 149.6 174.8 176.8Q174.7 185.2 164.1 186.7Q91.3 189 18.6 187.7Q6 186 6.4 176.8Q8 149.6 5.7 124Q8.7 113.2 27.5 111.6" pathLength="1"/><text class="dg-text dg-title" x="90.7" y="146.3" font-size="22">Notes</text><text class="dg-text dg-sub" x="90.7" y="166.3" font-size="16.5">free text</text></g><g class="dg-node" style="--d:0.28s"><rect class="dg-shadow" x="214.4" y="119" width="169.4" height="72" rx="10"/><rect class="dg-bg" x="209.4" y="114" width="169.4" height="72" rx="10"/><path class="dg-stroke" d="M222.6 113.6Q294.1 115.7 369 114.7Q378.8 113.2 379.4 125.2Q377.4 150 379.6 175.9Q377.6 187.4 368.7 187.2Q294.1 185.4 221.1 186Q210.7 185.5 208.6 177.4Q212.1 150 208.1 122.7Q209.9 112.9 230.1 113.6" pathLength="1"/><path class="dg-stroke is-second" d="M222.3 113.4Q294.7 110.9 367 111.5Q378.1 113.1 380.1 123.6Q378.1 149.6 378.1 176.4Q379.2 184.8 368.8 184.8Q294.7 185.6 220.5 184.7Q209.2 185.2 211.6 175Q210.4 149.6 211.6 123.9Q209.3 113.9 230.3 111.4" pathLength="1"/><text class="dg-text dg-title" x="294.1" y="146.3" font-size="22">AI step</text><text class="dg-text dg-sub" x="294.1" y="166.3" font-size="16.5">reads the notes</text></g><g class="dg-node" style="--d:0.56s"><rect class="dg-shadow" x="417.8" y="119" width="169.4" height="72" rx="10"/><rect class="dg-bg" x="412.8" y="114" width="169.4" height="72" rx="10"/><path class="dg-stroke" d="M427.2 112.4Q497.5 113.6 573.7 112.8Q580.8 113.7 581.7 125.3Q583 150 582.6 174.4Q580.9 186.3 571.4 184.7Q497.5 183.7 422.8 186.2Q414.4 184.6 411.8 175.7Q413.5 150 411.4 123.3Q412.2 113.2 432.8 113.4" pathLength="1"/><path class="dg-stroke is-second" d="M427.1 112.2Q498.1 111.6 570.4 114.3Q580.7 112.4 580.5 123.8Q581.9 149.6 582.4 177.8Q581.2 187.9 573.2 187.8Q498.1 187.3 423.2 185.8Q413.3 187.5 415.8 176.7Q413 149.6 415.5 123.2Q412.9 113.4 433.1 112.6" pathLength="1"/><text class="dg-text dg-title" x="497.5" y="146.3" font-size="22">Tasks</text><text class="dg-text dg-sub" x="497.5" y="166.3" font-size="16.5">fixed format</text></g><g class="dg-node" style="--d:0.84s"><rect class="dg-shadow" x="621.2" y="119" width="169.4" height="72" rx="10"/><rect class="dg-bg" x="616.2" y="114" width="169.4" height="72" rx="10"/><path class="dg-stroke" d="M628.6 115.1Q700.9 114.9 775 112.4Q784.1 112.5 786.5 123.4Q787.7 150 787.3 176.2Q786.3 186.2 774.5 184.7Q700.9 187.2 626.3 184.5Q615.2 186.6 617.5 176.4Q617.2 150 615.5 124.6Q616.1 115 634.3 113.7" pathLength="1"/><path class="dg-stroke is-second" d="M629.7 114.5Q701.5 113.9 776.2 113.8Q784.2 112.9 786.2 122.5Q782.7 149.6 784.7 177.4Q784.2 186.3 774.3 184.7Q701.5 188.6 628 187.2Q617 185.7 617.2 177.4Q619.2 149.6 617.2 122.7Q619.2 114.3 635 111.6" pathLength="1"/><text class="dg-text dg-title" x="700.9" y="146.3" font-size="22">Task tracker</text><text class="dg-text dg-sub" x="700.9" y="166.3" font-size="16.5">creates them</text></g><g class="dg-node" style="--d:1.12s"><rect class="dg-shadow" x="824.6" y="119" width="169.4" height="72" rx="10"/><rect class="dg-bg" x="819.6" y="114" width="169.4" height="72" rx="10"/><path class="dg-stroke" d="M832 113Q904.3 115.1 980.4 115.6Q988.2 113.2 990.1 124Q988.2 150 989.1 176.7Q987.9 185.1 979.1 185.3Q904.3 184.7 829.1 187Q820 184.6 819.7 176.8Q819.7 150 820.2 122.7Q820.2 112.3 837.8 113.2" pathLength="1"/><path class="dg-stroke is-second" d="M835.6 113.3Q904.9 114.9 978 111.5Q989.8 111.8 990.2 124Q989.6 149.6 989.9 177.8Q988 187.9 979.4 184.7Q904.9 185.6 832.6 187.4Q820.8 185.6 821.2 175.1Q820.1 149.6 820.8 121.5Q822.5 114.4 839.8 111.5" pathLength="1"/><text class="dg-text dg-title" x="904.3" y="146.3" font-size="22">Team</text><text class="dg-text dg-sub" x="904.3" y="166.3" font-size="16.5">ready to assign</text></g><path id="dg-notes-w-c0" class="dg-line" d="M180 150Q192.4 148.4 205.4 150" pathLength="1" style="--d:0.20s"/><path class="dg-head" d="M197.9 152.9L205.4 150L198.8 144.9" style="--d:0.20s"/><path id="dg-notes-w-c1" class="dg-line" d="M382.3 150.4Q395.8 148.3 408.8 150" pathLength="1" style="--d:0.48s"/><path class="dg-head" d="M401 152.8L408.8 150L401.3 144.7" style="--d:0.48s"/><path id="dg-notes-w-c2" class="dg-line" d="M586.7 149.6Q599.2 149.6 612.2 150" pathLength="1" style="--d:0.76s"/><path class="dg-head" d="M604 154.3L612.2 150L604.5 146" style="--d:0.76s"/><path id="dg-notes-w-c3" class="dg-line" d="M789.3 149.5Q802.6 148 815.6 150" pathLength="1" style="--d:1.04s"/><path class="dg-head" d="M805.9 153.7L815.6 150L807.6 143.5" style="--d:1.04s"/><g class="dg-node is-aux" style="--d:0.10s"><rect class="dg-bg" x="179.1" y="8" width="230" height="62" rx="10"/><path class="dg-stroke" d="M190.5 8.9Q294.1 10.2 397.9 9.1Q409.4 9.1 409.8 19.5Q409.1 39 409 58.7Q409.8 71.1 399.2 69.1Q294.1 72.5 188.2 69.8Q179.2 71.2 178 60.2Q180.8 39 177.6 17.2Q180.1 7.5 198.4 7.4"/><text class="dg-text dg-title" x="294.1" y="35" font-size="21">Task format</text><text class="dg-text dg-sub" x="294.1" y="55" font-size="16.5">the fields every task needs</text></g><path id="dg-notes-w-f" class="dg-line" d="M294.2 73.6Q294.3 91.5 294.1 109" pathLength="1" style="--d:0.30s"/><path class="dg-head" d="M290.5 101.2L294.1 109L298.6 100.2" style="--d:0.30s"/><circle class="dg-dot" r="4.5" cx="0" cy="0" opacity="0"><animateMotion dur="4.30s" repeatCount="indefinite" calcMode="linear" keyPoints="0;1;1" keyTimes="0;0.1977;1"><mpath href="#dg-notes-w-c0"/></animateMotion><animate attributeName="opacity" dur="4.30s" repeatCount="indefinite" calcMode="discrete" values="1;0" keyTimes="0;0.1977"/></circle><circle class="dg-dot" r="4.5" cx="0" cy="0" opacity="0"><animateMotion dur="4.30s" repeatCount="indefinite" calcMode="linear" keyPoints="0;0;1;1" keyTimes="0;0.1977;0.3953;1"><mpath href="#dg-notes-w-c1"/></animateMotion><animate attributeName="opacity" dur="4.30s" repeatCount="indefinite" calcMode="discrete" values="0;1;0" keyTimes="0;0.1977;0.3953"/></circle><circle class="dg-dot" r="4.5" cx="0" cy="0" opacity="0"><animateMotion dur="4.30s" repeatCount="indefinite" calcMode="linear" keyPoints="0;0;1;1" keyTimes="0;0.3953;0.5930;1"><mpath href="#dg-notes-w-c2"/></animateMotion><animate attributeName="opacity" dur="4.30s" repeatCount="indefinite" calcMode="discrete" values="0;1;0" keyTimes="0;0.3953;0.5930"/></circle><circle class="dg-dot" r="4.5" cx="0" cy="0" opacity="0"><animateMotion dur="4.30s" repeatCount="indefinite" calcMode="linear" keyPoints="0;0;1;1" keyTimes="0;0.5930;0.7907;1"><mpath href="#dg-notes-w-c3"/></animateMotion><animate attributeName="opacity" dur="4.30s" repeatCount="indefinite" calcMode="discrete" values="0;1;0" keyTimes="0;0.5930;0.7907"/></circle><circle class="dg-dot is-soft" r="3.5" cx="0" cy="0" opacity="0"><animateMotion dur="4.30s" repeatCount="indefinite" calcMode="linear" keyPoints="0;1;1" keyTimes="0;0.1977;1"><mpath href="#dg-notes-w-f"/></animateMotion><animate attributeName="opacity" dur="4.30s" repeatCount="indefinite" calcMode="discrete" values="1;0" keyTimes="0;0.1977"/></circle></svg>
+<svg class="dg dg-tall" viewBox="0 0 320 492" role="img" aria-labelledby="dg-notes-tall-t dg-notes-tall-d"><title id="dg-notes-tall-t">How free-text notes become tracked tasks</title><desc id="dg-notes-tall-d">Free-text notes go to an AI step that returns tasks in a fixed format. The tasks are created in the team&#x27;s task tracker, ready to assign.</desc><g class="dg-node" style="--d:0.00s"><rect class="dg-shadow" x="11" y="13" width="170" height="66" rx="10"/><rect class="dg-bg" x="6" y="8" width="170" height="66" rx="10"/><path class="dg-stroke" d="M20.5 8.4Q91 6.6 164.6 6.3Q176.7 6.9 175.5 17.1Q176.7 41 176.7 63.3Q175 73.3 165.2 75.5Q91 74.7 17.2 72.3Q4.9 75.6 4.6 63.3Q4.2 41 6.4 18.5Q7.1 7.2 23.6 6.7" pathLength="1"/><path class="dg-stroke is-second" d="M21.1 7.9Q91.6 4.9 167.4 5.9Q176.5 7.5 177.4 18.3Q177 40.6 177.5 65.7Q176.5 72.7 165.3 74.6Q91.6 76.8 17.4 72.8Q6.5 73.3 7 64.2Q7.5 40.6 8.1 18.1Q6.1 6.6 26.7 6.6" pathLength="1"/><text class="dg-text dg-title" x="91" y="37" font-size="21">Notes</text><text class="dg-text dg-sub" x="91" y="57" font-size="16">free text</text></g><g class="dg-node" style="--d:0.28s"><rect class="dg-shadow" x="11" y="115" width="170" height="66" rx="10"/><rect class="dg-bg" x="6" y="110" width="170" height="66" rx="10"/><path class="dg-stroke" d="M18.9 108.9Q91 110.6 166.5 109.8Q175.4 109.4 177.1 120.9Q173.9 143 175.1 164.8Q175.1 174.8 165.1 176.6Q91 176.8 15.3 175.1Q6.5 174.3 4.9 164.4Q7.9 143 7.5 119.3Q6.5 110.9 26.7 109" pathLength="1"/><path class="dg-stroke is-second" d="M20.3 109.5Q91.6 109.1 166.7 110Q176.2 109.6 176.1 117.4Q176 142.6 174.8 166.8Q176.9 176.7 165.1 177.5Q91.6 179.1 18.3 174.9Q9.1 176.2 8.2 167.2Q6.9 142.6 7.8 118.4Q7.9 110.2 28.2 107.6" pathLength="1"/><text class="dg-text dg-title" x="91" y="139" font-size="21">AI step</text><text class="dg-text dg-sub" x="91" y="159" font-size="16">reads the notes</text></g><g class="dg-node" style="--d:0.56s"><rect class="dg-shadow" x="11" y="217" width="170" height="66" rx="10"/><rect class="dg-bg" x="6" y="212" width="170" height="66" rx="10"/><path class="dg-stroke" d="M20.4 213.4Q91 210.8 165.3 212.4Q176.5 212.2 176.5 222.5Q174.1 245 177.6 269Q176 276.6 166 277.5Q91 279.1 16.6 278.4Q5.4 276.7 7.3 269.5Q6.5 245 6.1 220.4Q6 212.2 23.7 211.6" pathLength="1"/><path class="dg-stroke is-second" d="M20.4 212.5Q91.6 210.5 166.3 209.6Q177.3 211.7 174.4 221.7Q177.5 244.6 177.3 268.3Q177 278.8 166.2 278.6Q91.6 276.7 16.5 280Q5.8 276.7 7.1 268.3Q9.9 244.6 7.9 221.8Q8.7 210.6 25.4 210.8" pathLength="1"/><text class="dg-text dg-title" x="91" y="241" font-size="21">Tasks</text><text class="dg-text dg-sub" x="91" y="261" font-size="16">fixed format</text></g><g class="dg-node" style="--d:0.84s"><rect class="dg-shadow" x="11" y="319" width="170" height="66" rx="10"/><rect class="dg-bg" x="6" y="314" width="170" height="66" rx="10"/><path class="dg-stroke" d="M20.2 312.5Q91 312 165.1 315.1Q174.6 314 177.5 322.6Q175.3 347 175.8 368.9Q174.4 379.6 166.7 378.4Q91 379.2 15 381.1Q5.3 380.4 7.1 368.5Q3.5 347 4.9 322.7Q7.2 312.8 23.2 314" pathLength="1"/><path class="dg-stroke is-second" d="M21.1 312.2Q91.6 311.8 166.3 312.9Q176.1 311.6 175.7 324.5Q177.6 346.6 176.1 371.2Q174.2 379.4 164.4 380.4Q91.6 380.8 16 378.7Q8.5 379.2 8.2 370.3Q7.8 346.6 8.2 323.6Q7.5 312 27.5 312.1" pathLength="1"/><text class="dg-text dg-title" x="91" y="343" font-size="21">Task tracker</text><text class="dg-text dg-sub" x="91" y="363" font-size="16">creates them</text></g><g class="dg-node" style="--d:1.12s"><rect class="dg-shadow" x="11" y="421" width="170" height="66" rx="10"/><rect class="dg-bg" x="6" y="416" width="170" height="66" rx="10"/><path class="dg-stroke" d="M18.5 415.7Q91 418.1 167.7 416.5Q177.6 415.5 177.5 424.4Q177.4 449 174.6 471.2Q176 481.5 166.7 480.6Q91 481.6 14.4 481.8Q4.9 482.7 7 472.7Q3.8 449 5.8 427.6Q5.1 415.3 23.6 414.4" pathLength="1"/><path class="dg-stroke is-second" d="M21.5 413.5Q91.6 412.6 167.4 414.4Q175.4 413.7 174.9 426Q174.6 448.6 177.2 471.9Q177.2 483.3 165.6 482.5Q91.6 481.5 19.1 482.1Q7.6 481.5 8.4 472.1Q8.7 448.6 6.6 426.5Q6.9 416.3 24.6 413.7" pathLength="1"/><text class="dg-text dg-title" x="91" y="445" font-size="21">Team</text><text class="dg-text dg-sub" x="91" y="465" font-size="16">ready to assign</text></g><path id="dg-notes-t-c0" class="dg-line" d="M91 77.9Q92.4 92 91 106" pathLength="1" style="--d:0.20s"/><path class="dg-head" d="M87.3 97.6L91 106L95.9 98.6" style="--d:0.20s"/><path id="dg-notes-t-c1" class="dg-line" d="M90.8 179.5Q92.1 194 91 208" pathLength="1" style="--d:0.48s"/><path class="dg-head" d="M87.3 198.2L91 208L96.4 199.4" style="--d:0.48s"/><path id="dg-notes-t-c2" class="dg-line" d="M90.8 281.6Q89 296 91 310" pathLength="1" style="--d:0.76s"/><path class="dg-head" d="M86.1 303.4L91 310L95.1 300.4" style="--d:0.76s"/><path id="dg-notes-t-c3" class="dg-line" d="M90.5 384.2Q92.9 398 91 412" pathLength="1" style="--d:1.04s"/><path class="dg-head" d="M87.4 402.2L91 412L96.1 404.7" style="--d:1.04s"/><g class="dg-node is-aux" style="--d:0.10s"><rect class="dg-bg" x="212" y="110" width="102" height="66" rx="10"/><path class="dg-stroke" d="M223.5 108.8Q263 110.7 304.2 108.4Q315.6 110.8 314.3 119.2Q311.8 143 314.1 167Q315.1 176.3 304.4 174.8Q263 176.6 223.1 176.4Q212.7 175.2 212.4 167.1Q211.8 143 211.4 118.9Q210.8 109.3 230.2 109.4"/><text class="dg-text dg-title" x="263" y="129.9" font-size="19">Task format</text><text class="dg-text dg-sub" x="263" y="149.9" font-size="15">fields every</text><text class="dg-text dg-sub" x="263" y="166.9" font-size="15">task needs</text></g><path id="dg-notes-t-f" class="dg-line" d="M208.5 143.3Q194.5 143.1 181 143" pathLength="1" style="--d:0.30s"/><path class="dg-head" d="M188.4 138.7L181 143L190.2 147.4" style="--d:0.30s"/><circle class="dg-dot" r="4.5" cx="0" cy="0" opacity="0"><animateMotion dur="4.30s" repeatCount="indefinite" calcMode="linear" keyPoints="0;1;1" keyTimes="0;0.1977;1"><mpath href="#dg-notes-t-c0"/></animateMotion><animate attributeName="opacity" dur="4.30s" repeatCount="indefinite" calcMode="discrete" values="1;0" keyTimes="0;0.1977"/></circle><circle class="dg-dot" r="4.5" cx="0" cy="0" opacity="0"><animateMotion dur="4.30s" repeatCount="indefinite" calcMode="linear" keyPoints="0;0;1;1" keyTimes="0;0.1977;0.3953;1"><mpath href="#dg-notes-t-c1"/></animateMotion><animate attributeName="opacity" dur="4.30s" repeatCount="indefinite" calcMode="discrete" values="0;1;0" keyTimes="0;0.1977;0.3953"/></circle><circle class="dg-dot" r="4.5" cx="0" cy="0" opacity="0"><animateMotion dur="4.30s" repeatCount="indefinite" calcMode="linear" keyPoints="0;0;1;1" keyTimes="0;0.3953;0.5930;1"><mpath href="#dg-notes-t-c2"/></animateMotion><animate attributeName="opacity" dur="4.30s" repeatCount="indefinite" calcMode="discrete" values="0;1;0" keyTimes="0;0.3953;0.5930"/></circle><circle class="dg-dot" r="4.5" cx="0" cy="0" opacity="0"><animateMotion dur="4.30s" repeatCount="indefinite" calcMode="linear" keyPoints="0;0;1;1" keyTimes="0;0.5930;0.7907;1"><mpath href="#dg-notes-t-c3"/></animateMotion><animate attributeName="opacity" dur="4.30s" repeatCount="indefinite" calcMode="discrete" values="0;1;0" keyTimes="0;0.5930;0.7907"/></circle><circle class="dg-dot is-soft" r="3.5" cx="0" cy="0" opacity="0"><animateMotion dur="4.30s" repeatCount="indefinite" calcMode="linear" keyPoints="0;1;1" keyTimes="0;0.1977;1"><mpath href="#dg-notes-t-f"/></animateMotion><animate attributeName="opacity" dur="4.30s" repeatCount="indefinite" calcMode="discrete" values="1;0" keyTimes="0;0.1977"/></circle></svg>
+<!-- /diagram:notes -->
+            </figure>
+            <p class="case__lesson">What I took away: treating the model as one step in an ordinary program, with a fixed output format, is what made it dependable enough to use every day.</p>
+          </article>
+
+          <article class="case" aria-labelledby="case-platform">
+            <h3 class="case__title" id="case-platform">A shared foundation for internal apps</h3>
+            <p class="case__lede">When several apps are built at once, each one solves the same basics its own way. I set up a shared starting point for sign-in, settings and deployment, and one pipeline that builds, checks and releases every app the same way.</p>
+            <figure class="case__diagram diagram">
+              <!-- diagram:platform -->
+<svg class="dg dg-wide" viewBox="0 0 1000 196" role="img" aria-labelledby="dg-platform-wide-t dg-platform-wide-d"><title id="dg-platform-wide-t">How internal apps get built and released</title><desc id="dg-platform-wide-d">Apps built at the same time all start from one shared foundation covering sign-in, settings and deployment. One pipeline builds and checks each app, a release check approves it, and it goes live.</desc><g class="dg-node is-ghost" style="--d:0s"><rect class="dg-bg" x="18" y="102" width="169.4" height="72" rx="10"/><path class="dg-stroke" d="M29.4 102.8Q102.7 102.3 177.3 100.4Q188.2 102.2 185.8 111.2Q187.9 138 185.9 165.4Q186.3 174.6 178.7 173.6Q102.7 173.8 28 172.6Q16.8 172.5 18.7 165.4Q17.8 138 17.1 111.2Q16.8 103.6 36.9 101.6" pathLength="1"/></g><g class="dg-node is-ghost" style="--d:0s"><rect class="dg-bg" x="12" y="108" width="169.4" height="72" rx="10"/><path class="dg-stroke" d="M24.9 107Q96.7 110.6 172.1 108.6Q180.5 106.8 180.5 117.3Q180.5 144 181.9 169.1Q181.5 181.2 172.5 180.8Q96.7 177.8 22.6 181.6Q13.2 181 12.5 171.2Q14 144 13.1 117.9Q12.4 107.2 29.8 107" pathLength="1"/></g><g class="dg-node" style="--d:0.00s"><rect class="dg-shadow" x="11" y="119" width="169.4" height="72" rx="10"/><rect class="dg-bg" x="6" y="114" width="169.4" height="72" rx="10"/><path class="dg-stroke" d="M20.4 113.4Q90.7 115.7 166.4 115.2Q176.7 113.3 176.7 124.8Q177.8 150 174.3 177.6Q173.8 187 166.3 184.8Q90.7 188.3 17.5 184.8Q5.4 186.8 7.1 175Q7.6 150 5.7 122.5Q5.7 115.5 26.3 112.5" pathLength="1"/><path class="dg-stroke is-second" d="M20.7 114.6Q91.3 114.1 166.3 111.3Q175.2 114.3 175.3 121.9Q175.3 149.6 175.6 177.4Q175 186.6 163.8 184.8Q91.3 187.7 17.8 188Q8.3 185.4 6.7 174.8Q6.2 149.6 8.8 121.7Q7.1 111.5 25.2 111.6" pathLength="1"/><text class="dg-text dg-title" x="90.7" y="146.3" font-size="22">Apps</text><text class="dg-text dg-sub" x="90.7" y="166.3" font-size="16.5">built at once</text></g><g class="dg-node" style="--d:0.28s"><rect class="dg-shadow" x="214.4" y="119" width="169.4" height="72" rx="10"/><rect class="dg-bg" x="209.4" y="114" width="169.4" height="72" rx="10"/><path class="dg-stroke" d="M223.3 112.3Q294.1 116.1 367.3 115.3Q378.4 115.1 378.9 124.8Q379.6 150 378.3 174.9Q377.5 185.4 367.7 187Q294.1 184.2 218.1 186.2Q209 186.3 210 175.4Q210.4 150 207.9 124.9Q210.3 113.2 226.8 113" pathLength="1"/><path class="dg-stroke is-second" d="M224.1 112.4Q294.7 110.3 368.6 111.6Q379.7 113.6 379.6 124.3Q379.3 149.6 378.2 176.7Q379.8 184.6 368 187.5Q294.7 185.9 220.8 187.5Q212.4 185.7 212.2 175Q211.8 149.6 211.3 122.8Q210 113.8 230.5 112.9" pathLength="1"/><text class="dg-text dg-title" x="294.1" y="146.3" font-size="22">Shared foundation</text><text class="dg-text dg-sub" x="294.1" y="166.3" font-size="16.5">the basics, once</text></g><g class="dg-node" style="--d:0.56s"><rect class="dg-shadow" x="417.8" y="119" width="169.4" height="72" rx="10"/><rect class="dg-bg" x="412.8" y="114" width="169.4" height="72" rx="10"/><path class="dg-stroke" d="M426.3 114.2Q497.5 111.3 572.8 113.2Q582.8 113.9 580.9 123.9Q582.7 150 582.8 175.8Q583.6 186.6 572.9 185.6Q497.5 183.5 423.4 186.9Q412.1 187.1 414.2 177.2Q412.4 150 411.4 122.8Q412.8 114.6 431.9 112.5" pathLength="1"/><path class="dg-stroke is-second" d="M426 114.5Q498.1 111.8 571.4 113.1Q581 112.6 583.5 121.6Q584.4 149.6 581.2 174.9Q582.4 185.7 571 187.4Q498.1 188.7 423.1 187.8Q413.4 185.4 413.1 176.5Q413.3 149.6 415.2 123.4Q413.7 112.7 434 111.8" pathLength="1"/><text class="dg-text dg-title" x="497.5" y="146.3" font-size="22">Pipeline</text><text class="dg-text dg-sub" x="497.5" y="166.3" font-size="16.5">build and check</text></g><g class="dg-node" style="--d:0.84s"><rect class="dg-shadow" x="621.2" y="119" width="169.4" height="72" rx="10"/><rect class="dg-bg" x="616.2" y="114" width="169.4" height="72" rx="10"/><path class="dg-stroke" d="M630.6 115Q700.9 113.2 776.6 115.2Q785.8 114.2 784.3 124.3Q785.5 150 785.4 175.5Q786.9 186.3 776.5 186.1Q700.9 184.2 627.4 186.2Q614.7 185.6 615.5 176.5Q613.5 150 615.1 123.9Q615.7 115.1 635.5 112.5" pathLength="1"/><path class="dg-stroke is-second" d="M631 111.3Q701.5 113.8 776.3 114.1Q784.3 111.5 787.1 121.4Q785.5 149.6 786.9 176.1Q784.6 186.7 774.9 185.7Q701.5 187.5 627.3 185.6Q619 186.9 617 177.3Q619.5 149.6 619.3 121.3Q617 111.8 638.2 112" pathLength="1"/><text class="dg-text dg-title" x="700.9" y="146.3" font-size="22">Release check</text><text class="dg-text dg-sub" x="700.9" y="166.3" font-size="16.5">before go-live</text></g><g class="dg-node" style="--d:1.12s"><rect class="dg-shadow" x="824.6" y="119" width="169.4" height="72" rx="10"/><rect class="dg-bg" x="819.6" y="114" width="169.4" height="72" rx="10"/><path class="dg-stroke" d="M832.1 113.6Q904.3 116.6 977.5 112.5Q989 113.1 987.9 123.2Q991.6 150 990.1 177Q988.9 184.7 978.1 185.5Q904.3 188.4 829.8 186.4Q818.5 185.8 819.6 175.2Q821.3 150 820.8 124.7Q820.6 115.3 837.3 112.6" pathLength="1"/><path class="dg-stroke is-second" d="M834.5 113.2Q904.9 114.6 977.3 111.9Q987.2 111.8 987.4 121.8Q986.9 149.6 987.2 177.7Q989.7 187.7 978.5 186.5Q904.9 186.3 832.7 187Q820.9 184.7 819.8 175.6Q821.6 149.6 820.1 123.6Q821.2 112.8 839.5 112" pathLength="1"/><text class="dg-text dg-title" x="904.3" y="146.3" font-size="22">Live</text><text class="dg-text dg-sub" x="904.3" y="166.3" font-size="16.5">for the team</text></g><path id="dg-platform-w-c0" class="dg-line" d="M179.4 149.8Q192.4 148.7 205.4 150" pathLength="1" style="--d:0.20s"/><path class="dg-head" d="M197.3 153.1L205.4 150L198 144.4" style="--d:0.20s"/><path id="dg-platform-w-c1" class="dg-line" d="M382.3 150Q395.8 151 408.8 150" pathLength="1" style="--d:0.48s"/><path class="dg-head" d="M401.9 154.8L408.8 150L399.9 146" style="--d:0.48s"/><path id="dg-platform-w-c2" class="dg-line" d="M585.7 149.6Q599.2 148.4 612.2 150" pathLength="1" style="--d:0.76s"/><path class="dg-head" d="M603.8 152.7L612.2 150L605.5 144.9" style="--d:0.76s"/><path id="dg-platform-w-c3" class="dg-line" d="M789.2 150.5Q802.6 150.5 815.6 150" pathLength="1" style="--d:1.04s"/><path class="dg-head" d="M808.3 154.2L815.6 150L806.6 145" style="--d:1.04s"/><g class="dg-node is-aux" style="--d:0.10s"><rect class="dg-bg" x="179.1" y="8" width="230" height="62" rx="10"/><path class="dg-stroke" d="M193.8 9.1Q294.1 6 397.8 9.3Q409 6.6 408.5 17Q409.4 39 408.9 59.6Q408 69.8 399.3 71.6Q294.1 72.7 188.3 68.6Q178.3 68.6 179.9 58.6Q178.8 39 179.5 16.9Q180.4 9 196.4 6.8"/><text class="dg-text dg-title" x="294.1" y="35" font-size="21">Shared UI</text><text class="dg-text dg-sub" x="294.1" y="55" font-size="16.5">common components</text></g><path id="dg-platform-w-f" class="dg-line" d="M293.9 74.6Q296.4 91.5 294.1 109" pathLength="1" style="--d:0.30s"/><path class="dg-head" d="M291.6 101L294.1 109L300.1 100.7" style="--d:0.30s"/><circle class="dg-dot" r="4.5" cx="0" cy="0" opacity="0"><animateMotion dur="4.30s" repeatCount="indefinite" calcMode="linear" keyPoints="0;1;1" keyTimes="0;0.1977;1"><mpath href="#dg-platform-w-c0"/></animateMotion><animate attributeName="opacity" dur="4.30s" repeatCount="indefinite" calcMode="discrete" values="1;0" keyTimes="0;0.1977"/></circle><circle class="dg-dot" r="4.5" cx="0" cy="0" opacity="0"><animateMotion dur="4.30s" repeatCount="indefinite" calcMode="linear" keyPoints="0;0;1;1" keyTimes="0;0.1977;0.3953;1"><mpath href="#dg-platform-w-c1"/></animateMotion><animate attributeName="opacity" dur="4.30s" repeatCount="indefinite" calcMode="discrete" values="0;1;0" keyTimes="0;0.1977;0.3953"/></circle><circle class="dg-dot" r="4.5" cx="0" cy="0" opacity="0"><animateMotion dur="4.30s" repeatCount="indefinite" calcMode="linear" keyPoints="0;0;1;1" keyTimes="0;0.3953;0.5930;1"><mpath href="#dg-platform-w-c2"/></animateMotion><animate attributeName="opacity" dur="4.30s" repeatCount="indefinite" calcMode="discrete" values="0;1;0" keyTimes="0;0.3953;0.5930"/></circle><circle class="dg-dot" r="4.5" cx="0" cy="0" opacity="0"><animateMotion dur="4.30s" repeatCount="indefinite" calcMode="linear" keyPoints="0;0;1;1" keyTimes="0;0.5930;0.7907;1"><mpath href="#dg-platform-w-c3"/></animateMotion><animate attributeName="opacity" dur="4.30s" repeatCount="indefinite" calcMode="discrete" values="0;1;0" keyTimes="0;0.5930;0.7907"/></circle><circle class="dg-dot is-soft" r="3.5" cx="0" cy="0" opacity="0"><animateMotion dur="4.30s" repeatCount="indefinite" calcMode="linear" keyPoints="0;1;1" keyTimes="0;0.1977;1"><mpath href="#dg-platform-w-f"/></animateMotion><animate attributeName="opacity" dur="4.30s" repeatCount="indefinite" calcMode="discrete" values="1;0" keyTimes="0;0.1977"/></circle></svg>
+<svg class="dg dg-tall" viewBox="0 0 320 506" role="img" aria-labelledby="dg-platform-tall-t dg-platform-tall-d"><title id="dg-platform-tall-t">How internal apps get built and released</title><desc id="dg-platform-tall-d">Apps built at the same time all start from one shared foundation covering sign-in, settings and deployment. One pipeline builds and checks each app, a release check approves it, and it goes live.</desc><g class="dg-node is-ghost" style="--d:0s"><rect class="dg-bg" x="18" y="10" width="170" height="66" rx="10"/><path class="dg-stroke" d="M29.4 9.9Q103 10.9 176.4 9.7Q188.7 8.5 188.1 18.9Q185.8 43 187.1 66.3Q188.8 76.9 176.4 75Q103 75.5 28.2 76.2Q19.6 76.6 17.3 66.8Q20.7 43 18.3 18.4Q16.5 11.6 36.7 9.6" pathLength="1"/></g><g class="dg-node is-ghost" style="--d:0s"><rect class="dg-bg" x="12" y="16" width="170" height="66" rx="10"/><path class="dg-stroke" d="M26.2 16.9Q97 16.7 172.8 15.6Q181.5 16.7 181.4 26.8Q180.7 49 183.1 72.3Q180.8 83.5 170.7 81.6Q97 81.8 22.9 80.7Q13.4 82.8 11.4 71.5Q13 49 10.7 27.7Q11.5 15 30.8 15.8" pathLength="1"/></g><g class="dg-node" style="--d:0.00s"><rect class="dg-shadow" x="11" y="27" width="170" height="66" rx="10"/><rect class="dg-bg" x="6" y="22" width="170" height="66" rx="10"/><path class="dg-stroke" d="M19.5 23.4Q91 20 167.3 21.4Q176.2 21.7 175.8 33Q176.7 55 176.5 78.7Q175 88.3 167.2 87.8Q91 88.7 17.3 86.8Q6.6 87.5 6.6 76.5Q8.3 55 5.8 31.7Q6.3 22.7 23.5 21.8" pathLength="1"/><path class="dg-stroke is-second" d="M19.4 19.8Q91.6 20.6 166.9 19.7Q174.9 19.4 177.1 31.7Q174.6 54.6 176.6 77.2Q176.6 86.9 165.3 88.2Q91.6 90.2 18.7 87.6Q6.8 88.4 8 77.4Q9.7 54.6 8.1 31.1Q8.6 20.3 24.4 19.8" pathLength="1"/><text class="dg-text dg-title" x="91" y="51" font-size="21">Apps</text><text class="dg-text dg-sub" x="91" y="71" font-size="16">built at once</text></g><g class="dg-node" style="--d:0.28s"><rect class="dg-shadow" x="11" y="129" width="170" height="66" rx="10"/><rect class="dg-bg" x="6" y="124" width="170" height="66" rx="10"/><path class="dg-stroke" d="M18.4 124.8Q91 122.8 164.4 124.1Q176.8 125.2 175.2 132.9Q174.6 157 176.1 181.1Q177.5 189.9 165.3 189.8Q91 192.7 14.6 190.3Q7.4 190.6 4.9 179.5Q8.7 157 5.7 135.4Q6.8 125.2 26.6 123.8" pathLength="1"/><path class="dg-stroke is-second" d="M21.6 121.5Q91.6 124.4 167.2 124Q177.3 124.2 174.8 133.9Q175.1 156.6 176.2 180Q176.5 190.3 165 189.4Q91.6 188.9 18 191.4Q8.3 191 7.9 181Q7 156.6 9 132Q8.2 124.6 26.5 121.7" pathLength="1"/><text class="dg-text dg-title" x="91" y="153" font-size="21">Shared foundation</text><text class="dg-text dg-sub" x="91" y="173" font-size="16">the basics, once</text></g><g class="dg-node" style="--d:0.56s"><rect class="dg-shadow" x="11" y="231" width="170" height="66" rx="10"/><rect class="dg-bg" x="6" y="226" width="170" height="66" rx="10"/><path class="dg-stroke" d="M20.2 226.8Q91 226 167 224.9Q177.1 225.5 176.1 236.5Q174.4 259 176 281.4Q175.7 291.3 165 291.5Q91 294 15.3 290.9Q7 292.5 7.1 283.2Q3.2 259 7.7 237.6Q4.8 224.4 23.4 225.9" pathLength="1"/><path class="dg-stroke is-second" d="M18.9 224.6Q91.6 225.7 166.7 226Q176.1 225.4 175 236.5Q173.7 258.6 175.9 280.7Q174.5 292.8 165.9 292.9Q91.6 291.7 16.5 292.2Q8.6 292.4 6.9 283.1Q10.2 258.6 7.4 233.8Q6.5 225.6 25.8 223.6" pathLength="1"/><text class="dg-text dg-title" x="91" y="255" font-size="21">Pipeline</text><text class="dg-text dg-sub" x="91" y="275" font-size="16">build and check</text></g><g class="dg-node" style="--d:0.84s"><rect class="dg-shadow" x="11" y="333" width="170" height="66" rx="10"/><rect class="dg-bg" x="6" y="328" width="170" height="66" rx="10"/><path class="dg-stroke" d="M19.7 328.1Q91 328.6 166 326.4Q175 329.1 177.4 337Q177.6 361 176.3 383.2Q174.5 393.4 165.8 394.3Q91 392.6 14.7 395.1Q4.6 394.9 5.7 385.4Q5.9 361 5.6 338.5Q7 328.4 25.4 326.4" pathLength="1"/><path class="dg-stroke is-second" d="M21.8 326.7Q91.6 326.9 165.8 326.7Q175.9 326.4 175.6 336.1Q176.4 360.6 177.2 384.6Q177.3 393.1 164.4 394Q91.6 391.7 16.7 393.5Q8.8 395.6 6.8 383.2Q5.4 360.6 6.3 336.2Q7.1 327.7 24.5 326.1" pathLength="1"/><text class="dg-text dg-title" x="91" y="357" font-size="21">Release check</text><text class="dg-text dg-sub" x="91" y="377" font-size="16">before go-live</text></g><g class="dg-node" style="--d:1.12s"><rect class="dg-shadow" x="11" y="435" width="170" height="66" rx="10"/><rect class="dg-bg" x="6" y="430" width="170" height="66" rx="10"/><path class="dg-stroke" d="M18.9 429.7Q91 427.2 164.9 429.5Q176.5 431.3 177.6 438.3Q173.8 463 176.3 486.5Q176.8 495.6 165.9 496.4Q91 495.1 14.4 494.6Q6 496.1 6.8 485.4Q8.3 463 7.2 439.4Q4.8 428.9 26.5 428.5" pathLength="1"/><path class="dg-stroke is-second" d="M21.7 428.9Q91.6 426.4 166.9 430.4Q177 429 175 439.1Q177.4 462.6 175.9 487.9Q174.5 495 166.6 497.4Q91.6 498.3 17.1 497.3Q6.8 496.8 8.1 485.8Q5.8 462.6 7.4 439.1Q7.5 428.2 26 428.7" pathLength="1"/><text class="dg-text dg-title" x="91" y="459" font-size="21">Live</text><text class="dg-text dg-sub" x="91" y="479" font-size="16">for the team</text></g><path id="dg-platform-t-c0" class="dg-line" d="M90.5 92.4Q90.9 106 91 120" pathLength="1" style="--d:0.20s"/><path class="dg-head" d="M85.9 111.8L91 120L94.2 112.7" style="--d:0.20s"/><path id="dg-platform-t-c1" class="dg-line" d="M90.7 194Q92.7 208 91 222" pathLength="1" style="--d:0.48s"/><path class="dg-head" d="M86.9 213L91 222L95.8 214.3" style="--d:0.48s"/><path id="dg-platform-t-c2" class="dg-line" d="M91.5 295.7Q91.9 310 91 324" pathLength="1" style="--d:0.76s"/><path class="dg-head" d="M87.8 315.4L91 324L95.4 316.9" style="--d:0.76s"/><path id="dg-platform-t-c3" class="dg-line" d="M91.5 398.5Q89 412 91 426" pathLength="1" style="--d:1.04s"/><path class="dg-head" d="M85.7 417.6L91 426L94.6 417.3" style="--d:1.04s"/><g class="dg-node is-aux" style="--d:0.10s"><rect class="dg-bg" x="212" y="124" width="102" height="66" rx="10"/><path class="dg-stroke" d="M224.8 123.3Q263 123 305 122.7Q314.6 123.5 313.3 133.9Q315.1 157 315.4 179Q313.1 189 303.3 191Q263 187.2 221 188.9Q211.2 190.6 210.4 179.8Q214.1 157 211.9 132.4Q212.9 125.1 232.3 122.6"/><text class="dg-text dg-title" x="263" y="143.9" font-size="19">Shared UI</text><text class="dg-text dg-sub" x="263" y="163.9" font-size="15">common</text><text class="dg-text dg-sub" x="263" y="180.9" font-size="15">components</text></g><path id="dg-platform-t-f" class="dg-line" d="M208.2 156.9Q194.5 157.2 181 157" pathLength="1" style="--d:0.30s"/><path class="dg-head" d="M188.5 153.4L181 157L188.2 160.8" style="--d:0.30s"/><circle class="dg-dot" r="4.5" cx="0" cy="0" opacity="0"><animateMotion dur="4.30s" repeatCount="indefinite" calcMode="linear" keyPoints="0;1;1" keyTimes="0;0.1977;1"><mpath href="#dg-platform-t-c0"/></animateMotion><animate attributeName="opacity" dur="4.30s" repeatCount="indefinite" calcMode="discrete" values="1;0" keyTimes="0;0.1977"/></circle><circle class="dg-dot" r="4.5" cx="0" cy="0" opacity="0"><animateMotion dur="4.30s" repeatCount="indefinite" calcMode="linear" keyPoints="0;0;1;1" keyTimes="0;0.1977;0.3953;1"><mpath href="#dg-platform-t-c1"/></animateMotion><animate attributeName="opacity" dur="4.30s" repeatCount="indefinite" calcMode="discrete" values="0;1;0" keyTimes="0;0.1977;0.3953"/></circle><circle class="dg-dot" r="4.5" cx="0" cy="0" opacity="0"><animateMotion dur="4.30s" repeatCount="indefinite" calcMode="linear" keyPoints="0;0;1;1" keyTimes="0;0.3953;0.5930;1"><mpath href="#dg-platform-t-c2"/></animateMotion><animate attributeName="opacity" dur="4.30s" repeatCount="indefinite" calcMode="discrete" values="0;1;0" keyTimes="0;0.3953;0.5930"/></circle><circle class="dg-dot" r="4.5" cx="0" cy="0" opacity="0"><animateMotion dur="4.30s" repeatCount="indefinite" calcMode="linear" keyPoints="0;0;1;1" keyTimes="0;0.5930;0.7907;1"><mpath href="#dg-platform-t-c3"/></animateMotion><animate attributeName="opacity" dur="4.30s" repeatCount="indefinite" calcMode="discrete" values="0;1;0" keyTimes="0;0.5930;0.7907"/></circle><circle class="dg-dot is-soft" r="3.5" cx="0" cy="0" opacity="0"><animateMotion dur="4.30s" repeatCount="indefinite" calcMode="linear" keyPoints="0;1;1" keyTimes="0;0.1977;1"><mpath href="#dg-platform-t-f"/></animateMotion><animate attributeName="opacity" dur="4.30s" repeatCount="indefinite" calcMode="discrete" values="1;0" keyTimes="0;0.1977"/></circle></svg>
+<!-- /diagram:platform -->
+            </figure>
+            <p class="case__lesson">What I took away: a shared base only gets used if starting from it is easier than starting from scratch.</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- Experience: vertical scroll drives a sideways pan on wide screens. -->
+      <section class="exp" id="experience" aria-labelledby="exp-title">
+        <div class="exp__track">
+          <div class="exp__intro">
+            <h2 class="display h2" id="exp-title" data-split>Where I've<br />built things.</h2>
+            <p>From client websites to AI systems used in-house.</p>
+          </div>
+
+          <article class="exp__panel" style="--c: var(--btn-bg); --fg: var(--btn-fg); --r: -1.6deg; --lift: -3vh">
+            <p class="exp__when">Feb 2026 - Present</p>
+            <h3>AI &amp; ML Developer</h3>
+            <p class="exp__org">Kala Group</p>
+            <ul>
+              <li>Build AI agents and automations that teams use every day.</li>
+              <li>Connect business tools and data so agents can work across them.</li>
+              <li>Set up shared foundations and release pipelines for internal apps.</li>
+            </ul>
+          </article>
+
+          <article class="exp__panel" style="--c: var(--accent-soft); --fg: var(--ink); --r: 1.2deg; --lift: 4vh">
+            <p class="exp__when">May 2025 - Nov 2025</p>
+            <h3>Software Developer Intern</h3>
+            <p class="exp__org">Wide Marine Services</p>
+            <ul>
+              <li>Built an in-house web application end to end, from requirements to production.</li>
+            </ul>
+          </article>
+
+          <article class="exp__panel" style="--c: var(--glass-strong); --fg: var(--ink); --r: -0.8deg; --lift: -4vh">
+            <p class="exp__when">Mar 2025 - Aug 2025</p>
+            <h3>Web Developer Intern</h3>
+            <p class="exp__org">SoftByte India</p>
+            <ul>
+              <li>Rebuilt a client website with a responsive UI and back end on MERN and Next.js.</li>
+            </ul>
+          </article>
+
+          <article class="exp__panel exp__panel--edu" style="--c: var(--glass); --fg: var(--ink); --r: 1.6deg; --lift: 2vh">
+            <p class="exp__when">Graduated 2026</p>
+            <h3>B.Tech, Computer Science &amp; Engineering (AI &amp; ML)</h3>
+            <p class="exp__org">Pimpri Chinchwad College of Engineering, Pune</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- Projects: holographic trading cards (technique after Pokemon Cards CSS; code written for this site). -->
+      <section class="projects" id="projects" aria-labelledby="projects-title">
+        <div class="section-head">
+          <h2 class="display h2" id="projects-title" data-split>Side projects.<br />One placed third.</h2>
+        </div>
+
+        <div class="deck">
+          <div class="deck__slot">
+            <article class="card card--rare" data-holo>
+            <div class="card__art art--story" aria-hidden="true"><span class="card__glyph">3rd</span></div>
+            <div class="card__body">
+              <p class="card__type">Microsoft Bluebit Hackathon 2025</p>
+              <h3>AI Story Generator</h3>
+              <p>Writes a story with Gemini, illustrates it with Stable Diffusion and narrates it with ElevenLabs, in one multimodal pipeline. I led Team Null Pointers.</p>
+              <ul class="tags" aria-label="Built with"><li>Gemini</li><li>Stable Diffusion</li><li>ElevenLabs</li></ul>
+              <a class="card__link" href="https://github.com/root2j/Story_Generator_Team_Null_Pointers">Code on GitHub<svg class="icon" aria-hidden="true"><use href="#i-arrow-up-right" /></svg></a>
+            </div>
+            <span class="holo-shine" aria-hidden="true"></span>
+            <span class="holo-glare" aria-hidden="true"></span>
+          </article>
+          </div>
+
+          <div class="deck__slot">
+
+            <article class="card" data-holo>
+            <div class="card__art art--emotion" aria-hidden="true"><span class="card__glyph">EQ</span></div>
+            <div class="card__body">
+              <p class="card__type">Chatbot</p>
+              <h3>EmotionGPT</h3>
+              <p>A chatbot on the Gemini API that detects how the user feels and keeps track of the conversation's state.</p>
+              <ul class="tags" aria-label="Built with"><li>Gemini API</li><li>Emotion detection</li></ul>
+              <a class="card__link" href="https://github.com/root2j/EmotionGPT">Code on GitHub<svg class="icon" aria-hidden="true"><use href="#i-arrow-up-right" /></svg></a>
+            </div>
+            <span class="holo-shine" aria-hidden="true"></span>
+            <span class="holo-glare" aria-hidden="true"></span>
+          </article>
+
+          </div>
+
+          <div class="deck__slot">
+
+            <article class="card" data-holo>
+            <div class="card__art art--llama" aria-hidden="true"><span class="card__glyph">3.2</span></div>
+            <div class="card__body">
+              <p class="card__type">Fine-tuning</p>
+              <h3>Emotion-trained Llama 3.2</h3>
+              <p>Fine-tuned Meta's Llama 3.2 with LoRA for emotion detection and chain-of-thought reasoning.</p>
+              <ul class="tags" aria-label="Built with"><li>Llama 3.2</li><li>LoRA</li></ul>
+            </div>
+            <span class="holo-shine" aria-hidden="true"></span>
+            <span class="holo-glare" aria-hidden="true"></span>
+          </article>
+
+          </div>
+
+          <!--
+            To add a public demo, copy a card above this comment and change its
+            art class, glyph, text and link.
+          -->
+        </div>
+      </section>
+
+      <!-- Spec sheet: counters and grouped skills. -->
+      <section class="skills" id="skills" aria-labelledby="skills-title">
+        <div class="section-head">
+          <h2 class="display h2" id="skills-title" data-split>Spec sheet.</h2>
+        </div>
+        <div class="bento">
+          <div class="cell cell--count cell--ink">
+            <p class="cell__label">Microsoft Bluebit Hackathon 2025</p>
+            <p class="cell__big"><span data-count="3">3</span><sup>rd</sup></p>
+            <p class="cell__text">As team lead of Team Null Pointers.</p>
+          </div>
+          <div class="cell cell--count">
+            <p class="cell__label">LeetCode</p>
+            <p class="cell__big"><span data-count="250">250</span>+</p>
+            <p class="cell__text">Problems solved.</p>
+          </div>
+          <div class="cell cell--count cell--sky">
+            <p class="cell__label">B.Tech, CSE (AI &amp; ML)</p>
+            <p class="cell__big"><span data-count="2026" data-from="2022">2026</span></p>
+            <p class="cell__text">PCCOE, Pune.</p>
+          </div>
+
+          <div class="cell cell--chips cell--wide">
+            <h3 class="cell__label">AI &amp; Claude</h3>
+            <ul class="chips">
+              <li>Claude Code (skills, hooks, headless mode)</li><li>Anthropic API</li><li>MCP and FastMCP</li><li>Gemini and Vertex AI</li><li>Google ADK</li><li>Embeddings and semantic retrieval</li><li>LLM guardrails</li><li>LoRA fine-tuning</li><li>Computer vision</li>
+            </ul>
+          </div>
+          <div class="cell cell--chips cell--side">
+            <h3 class="cell__label">Languages</h3>
+            <ul class="chips">
+              <li>Python</li><li>SQL (T-SQL, PL/pgSQL)</li><li>TypeScript</li><li>JavaScript</li><li>C/C++</li><li>PowerShell</li>
+            </ul>
+          </div>
+          <div class="cell cell--chips cell--third">
+            <h3 class="cell__label">Data</h3>
+            <ul class="chips">
+              <li>SQL Server</li><li>PostgreSQL</li><li>MongoDB</li><li>Data modelling</li><li>Data cleaning</li><li>Query tuning</li><li>Alembic migrations</li>
+            </ul>
+          </div>
+          <div class="cell cell--chips cell--third">
+            <h3 class="cell__label">Integration &amp; Production</h3>
+            <ul class="chips">
+              <li>REST APIs</li><li>Typed API clients</li><li>Notion API</li><li>n8n</li><li>Next.js and React</li><li>GitHub Actions</li><li>Docker</li><li>Scheduled jobs</li><li>Retries and rate limiting</li><li>Audit logging</li>
+            </ul>
+          </div>
+          <div class="cell cell--chips cell--third">
+            <h3 class="cell__label">Cloud &amp; Security</h3>
+            <ul class="chips">
+              <li>Google Cloud</li><li>Azure</li><li>Vercel</li><li>Access control</li><li>Secrets management</li><li>Secret scanning</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- About: Pretext re-flows the text around the photo as it moves
+           (assets/js/liquid.js). The photo sits in a liquid-metal ring. -->
+      <section class="about" id="about" aria-labelledby="about-title">
+        <div class="section-head">
+          <p class="eyebrow">How I work</p>
+          <h2 class="display h2" id="about-title" data-split>Between the model<br />and the tools.</h2>
+        </div>
+        <div class="flow">
+          <div class="flow-photo">
+            <div class="flow-orb" aria-hidden="true"></div>
+            <picture>
+              <source type="image/avif" srcset="assets/img/profile-280.avif 280w, assets/img/profile-560.avif 560w" sizes="(min-width: 900px) 220px, 150px" />
+              <source type="image/webp" srcset="assets/img/profile-280.webp 280w, assets/img/profile-560.webp 560w" sizes="(min-width: 900px) 220px, 150px" />
+              <img src="assets/img/profile-560.jpg" width="560" height="560" alt="Rutuj Dhongade holding a ginger and white kitten" loading="lazy" decoding="async" />
+            </picture>
+          </div>
+          <p class="flow-text">Most of my work sits between AI models and the tools a team already uses. That means agents that read the right data and nothing more, pipelines that turn messy notes into clean tasks, and a shared foundation so every new app starts in the same place. I write the code, wire up the integrations and make sure every step is logged, so the people using it can trust what it does.</p>
+          <div class="flow-lines" aria-hidden="true"></div>
+        </div>
+      </section>
+
+      <section class="contact" id="contact" aria-labelledby="contact-title">
+        <div class="contact__logo" aria-hidden="true"></div>
+        <h2 class="display contact__title" id="contact-title" data-split>Have an agent<br />in mind?</h2>
+        <a class="contact__mail" href="mailto:dhongaderutuj@gmail.com">dhongaderutuj@gmail.com</a>
+        <ul class="contact__links">
+          <li><a href="https://www.linkedin.com/in/rutuj-dhongade"><svg class="icon" aria-hidden="true"><use href="#i-linkedin" /></svg>LinkedIn</a></li>
+          <li><a href="https://github.com/root2j"><svg class="icon" aria-hidden="true"><use href="#i-github" /></svg>GitHub</a></li>
+        </ul>
+
+        <footer class="foot">
+          <p>&copy; <span data-year>2026</span> Rutuj Dhongade</p>
+          <a href="#top">Back to top<svg class="icon" aria-hidden="true"><use href="#i-arrow-up" /></svg></a>
+        </footer>
+      </section>
+    </main>
   </body>
 </html>
