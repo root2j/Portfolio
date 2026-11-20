@@ -21,9 +21,8 @@ the moon button switches to night.
 | Liquid Logo / Paper Shaders | The liquid-metal RD monogram and the chrome ring round the photo (`liquid.js`) |
 | Pretext | The About text re-flows live around the moving photo (`liquid.js`) |
 | Pokémon Cards CSS | Holographic foil and tilt on the project cards (`app.js`, `site.css`) |
-| Sketchnote / Whiteboard explainer | Hand-drawn case-study diagrams that draw themselves (`tools/diagrams.py`) |
 | Minimal Counter Story | The counters in the spec sheet |
-| The Wada Pav artifact | Loader, sideways experience pan, scroll-velocity marquee, stacking cards, bento grid, grain, three motion levels |
+| The Wada Pav artifact | Loader, sideways experience pan, scroll-velocity marquee, bento grid, grain, motion switch |
 
 ## Files
 
@@ -35,11 +34,10 @@ assets/js/sky.js              the living sky (Paper Shaders ShaderMount)
 assets/Rutuj-Dhongade-Resume.pdf   the public resume behind the hero button
 assets/js/liquid.js           liquid metal (Paper Shaders) and text flow (Pretext)
 assets/js/vendor/             GSAP + ScrollTrigger, Lenis, Paper Shaders, Pretext, with licences
-assets/fonts/                 Archivo, JetBrains Mono, Caveat, with licences
+assets/fonts/                 Archivo and JetBrains Mono, with licences
 assets/img/                   sky, photo, liquid-metal logo map, social image, touch icon
 favicon.svg
 .nojekyll                     tells GitHub Pages to serve files as they are
-tools/diagrams.py             draws the case-study diagrams into index.html
 ```
 
 ## Preview locally
@@ -51,17 +49,17 @@ python -m http.server 8000
 Then open <http://localhost:8000>. Paths are relative, so the same files work
 at `/` locally and at `/Portfolio/` on GitHub Pages.
 
-## Motion levels
+## Motion
+
+Full motion is the default for every visitor, including when the OS asks for
+reduced motion. The Motion button in the nav is always shown, so anyone can
+switch it off; the choice is remembered in the browser. `?motion=off` and
+`?motion=on` set it from a link.
 
 | Level | When | What moves |
 | --- | --- | --- |
 | Full | Default | Everything |
-| Reduced | The OS asks for reduced motion (on Windows: Settings, Accessibility, Visual effects, Animation effects off) | Only what your scrolling or pointer drives: the sideways pan, stacking cards, counters, the nav lens. The sky holds still. |
 | Off | The visitor picks it with the nav button, or `?motion=off` | Nothing. A plain, readable page. |
-
-The nav shows a Motion button whenever the OS asks for reduced motion or the
-visitor has made a choice, so anyone can switch. `?motion=on` forces full
-motion.
 
 ## Toning things down
 
@@ -83,11 +81,10 @@ motion.
 
 - **Resume:** replace `assets/Rutuj-Dhongade-Resume.pdf`, keeping the same
   name. It's the public copy: no internal names, numbers or systems.
-- **Case studies:** each one is a title, a short paragraph, the diagram and a
-  "What I took away" line. Keep them general.
+- **Work section:** a short intro, the three-step flow (People, AI agents,
+  Tools and data) and four work areas, each a heading and one sentence.
+  Keep it general: no internal names, numbers or systems.
 - **Add a project or demo:** copy a `.deck__slot` block in the Projects section.
-- **Change a diagram:** edit `DIAGRAMS` in `tools/diagrams.py`, then run
-  `python tools/diagrams.py`.
 - **Social image:** serve the site, open it in a 1200×630 window, hide the nav,
   screenshot the hero and save it as `assets/img/og.jpg`.
 - **Liquid-metal logo:** `assets/img/rd-liquid.png` is "RD" in Archivo 800 run
@@ -99,7 +96,7 @@ motion.
 - Cloud photo by Miguel Á. Padriñán (the original site's background).
 - GSAP 3.13.0 and ScrollTrigger, GSAP standard no-charge licence. Lenis
   1.1.13, MIT. Paper Shaders 0.0.82, Apache 2.0. Pretext 1.0.0, MIT.
-- Fonts: Archivo, JetBrains Mono and Caveat, SIL Open Font License 1.1.
+- Fonts: Archivo and JetBrains Mono, SIL Open Font License 1.1.
 - Icons: Tabler Icons 3.52.0, MIT.
 - Effects after ShaderGradient, Liquid Glass JS, React Bits FluidGlass and
   Pokémon Cards CSS; the code here is written for this site.

@@ -14,17 +14,18 @@
   //         (it only moves when you scroll); autonomous motion goes: smooth
   //         scrolling, the moving sky, marquee drift, shimmer, grain.
   //   off:  the visitor switched motion off (nav button, or ?motion=off).
-  const SYS_RM = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  // Full motion is the default for everyone, whatever the OS setting; the
+  // Motion button in the nav is always shown so any visitor can turn it off.
   let pref = null;
   try {
     const q = new URLSearchParams(location.search).get("motion");
     if (q === "on" || q === "off") localStorage.setItem("rd-motion", q);
     pref = localStorage.getItem("rd-motion");
   } catch {
-    // Storage blocked: follow the OS setting.
+    // Storage blocked: stay on full motion.
   }
   const OFF = pref === "off";
-  const SOFT = !OFF && SYS_RM && pref !== "on";
+  const SOFT = false;
   const FULL = !OFF && !SOFT;
   const LEVEL = OFF ? "off" : SOFT ? "soft" : "full";
   doc.classList.add(`m-${LEVEL}`);
@@ -35,7 +36,7 @@
 
   /* ---------- Motion switch ---------- */
   const motionBtn = $(".nav__motion");
-  if (motionBtn && (SYS_RM || pref)) {
+  if (motionBtn) {
     motionBtn.hidden = false;
     motionBtn.textContent = FULL ? "Motion: on" : SOFT ? "Motion: reduced" : "Motion: off";
     motionBtn.setAttribute("aria-pressed", String(FULL));
@@ -476,51 +477,6 @@
   }
   $$("[data-holo]").forEach(holo);
 
-  /* ---------- Diagrams: draw in, then dots carry the data (full motion) ---------- */
-  const figures = $$(".diagram");
-  const svgs = (fig) => fig.querySelectorAll("svg");
-  const setFlowing = (fig, on) =>
-    svgs(fig).forEach((svg) => {
-      try {
-        if (on) svg.unpauseAnimations();
-        else svg.pauseAnimations();
-      } catch {
-        // SMIL unsupported: dots stay hidden.
-      }
-    });
-  if (FULL) {
-    figures.forEach((fig) => {
-      fig.classList.add("will-draw");
-      svgs(fig).forEach((svg) => {
-        try {
-          svg.pauseAnimations();
-          svg.setCurrentTime(0);
-        } catch {
-          // ignore
-        }
-      });
-    });
-    const onScreen = new IntersectionObserver((entries) => {
-      entries.forEach((e) => {
-        e.target.dataset.onscreen = String(e.isIntersecting);
-        if (e.target.classList.contains("is-live")) setFlowing(e.target, e.isIntersecting);
-      });
-    });
-    figures.forEach((fig) => onScreen.observe(fig));
-  }
-  function drawDiagram(fig) {
-    if (!FULL || fig.classList.contains("is-drawn")) return;
-    fig.classList.add("is-drawn");
-    let latest = 0;
-    fig.querySelectorAll("[style*='--d']").forEach((el) => {
-      latest = Math.max(latest, parseFloat(el.style.getPropertyValue("--d")) || 0);
-    });
-    window.setTimeout(() => {
-      fig.classList.add("is-live");
-      setFlowing(fig, fig.dataset.onscreen !== "false");
-    }, (latest + 0.9) * 1000);
-  }
-
   /* ---------- Everything below needs GSAP ---------- */
   const G = window.gsap;
   const ST = window.ScrollTrigger;
@@ -646,23 +602,17 @@
     }
   }
 
-  function buildCases() {
-    const cards = $$(".case");
-    G.matchMedia().add("(min-width: 1000px)", () => {
-      cards.forEach((card, i) => {
-        const next = cards[i + 1];
-        if (!next) return;
-        G.to(card, {
-          scale: 0.92,
-          "--dim": 0.65,
-          ease: "none",
-          scrollTrigger: { trigger: next, start: "top 75%", end: "top 20%", scrub: true },
-        });
-      });
-    });
-    cards.forEach((card) => {
-      const fig = $(".diagram", card);
-      if (fig) ST.create({ trigger: card, start: "top 70%", once: true, onEnter: () => drawDiagram(fig) });
+  function buildWork() {
+    // The one moment in this section: the links in the small flow draw across.
+    const links = $$(".work__flow .link");
+    if (!FULL || !links.length) return;
+    // --draw scales the link along its own axis: across on wide screens, down on phones.
+    G.from(links, {
+      "--draw": 0,
+      duration: 0.7,
+      ease: "power2.inOut",
+      stagger: 0.25,
+      scrollTrigger: { trigger: ".work__flow", start: "top 85%", once: true },
     });
   }
 
@@ -842,7 +792,7 @@
       // Build in page order so pins measure each other correctly.
       buildSplits();
       buildMarquee();
-      buildCases();
+      buildWork();
       buildExperience();
       buildProjects();
       buildSpecs();
